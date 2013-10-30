@@ -119,28 +119,65 @@
 	<input type="hidden" name="longitute" value="${place.gpsX}">
 	<input type="hidden" name="id" value="${place.culName}">
 	
-<table align="center" style="width:1000px">
+<table align="center" style="width:900px" cellpadding="0" cellspacing="1">
+
 	<tr>
-		<th colspan="2" align="center">${perForInfo.title}<br><br></th>
+		<th colspan="3" align="center"><h2><font face="휴먼매직체" >&#9829;&nbsp;&nbsp; ${perForInfo.title} &nbsp;&nbsp;&#9829;</font></h2>
+		<hr size="3" color = "black"><br><br></th>
 	</tr>
-	<tr border="1"> 
-		<td width="400" rowspan="6"><img src="${perForInfo.imgUrl}" style="width:300px; height:300px"></td>
+	
+	<tr> 
+		<td width="300" rowspan="9"><img src="${perForInfo.imgUrl}" style="width:300px; height:450px"></td>
 	</tr>
+	
 	<tr>
-		<td width="300"><img src="resources/images/date.png" ></td> <td width="300"> ${perForInfo.startDate} ~ ${perForInfo.endDate}</td>
-	</tr>
-	<tr>
-		<td><img src="resources/images/loca.png" ></td>  <td> ${perForInfo.place}</td>
-	</tr>
-	<tr>
-		<td><img src="resources/images/genre.png" ></td>  <td> ${perForInfo.realmName}</td>
-	</tr>
-	<tr>
-		<td><img src="resources/images/price.png" ></td>  <td> ${perForInfo.price} </td>
+		<td width="150"><img src="resources/images/date.png" ></td> 
+		<td width="300"><h3><font face="휴먼매직체" >${perForInfo.startDate} ~ ${perForInfo.endDate}</font></h3></td>
 	</tr>
 	<tr>
-		<td><img src="resources/images/call.png" ></td>  <td> ${perForInfo.phone} </td> 
+		<td><img src="resources/images/loca.png" ></td>  
+		<td><h3> <font face="휴먼매직체" > ${perForInfo.place}</font></h3></td>
 	</tr>
+	<tr>
+		<td><img src="resources/images/genre.png" ></td> 
+		 <td><h3><font face="휴먼매직체" >  ${perForInfo.realmName}</font></h3></td>
+	</tr>
+	<tr>
+		<td><img src="resources/images/price.png" ></td> 
+		 <td><h3><font face="휴먼매직체" >  ${perForInfo.price}</font> </h3> </td>
+	</tr>
+	<tr>
+		<td><img src="resources/images/call.png" ></td>  
+		<td><h3> <font face="휴먼매직체" >${perForInfo.phone}</font></h3></td>
+	</tr>
+	
+
+	
+	<tr>
+		<td><img src="resources/images/dis.png"> </td>  
+		<td><h3> <font face="휴먼매직체" >${perForInfo.phone}</font></h3></td>
+	</tr>
+
+	
+	<tr>
+		<td><img src="resources/images/disrate.png"> </td>  
+		<td><h3> <font face="휴먼매직체" >${perForInfo.phone}</font></h3></td>
+	</tr>
+	
+	<tr>
+		<td><img src="resources/images/print.png"> </td>  
+		<td><h4> <font face="휴먼매직체" >${perForInfo.phone}</font></h4></td>
+	</tr>
+	
+	<tr>
+		<td colspan="3" align ="center"><br><br><hr size="3" color = "black"></td>
+	</tr>
+	
+
+	</table>
+	
+	<table width="1000" align="center" cellspacing="30">
+
 	<tr> 
 		<td><img src="resources/images/about.png" ></td>
 		<td><img src="resources/images/how.png" ></td>
@@ -156,6 +193,7 @@
 			</td>
 		</c:if>
 	</tr>
-</table>
-</body>
+	</table>
+	</body>
 </html>
+	

@@ -74,13 +74,26 @@
 
 </head>
 <body>
-	<div id="header">
-	<h1><a href="/show/list.do">THE SHOW</a></h1>
+<div id="header">
 	<table align="center">
+	<tr>
+	<td>
+		<h1><a href="/show/list.do"><img src="resources/images/logo.png" /></a></h1>
+	</td>
+
+	<td>
 		<form action="/show/search.do" method="post">
-		<tr>
-		<td> <input name="search" type="text"> </td>
-		<td> <input type="submit" value="검색"> </td>
+		<input name="search" type="text" style="border: #407FC2 6px solid; height:60px; width:600px; padding:5px 0 0 7px; background-color:#fff; font-size:15px; font-family:돋움, Dotum; font-weight:bold; margin:5px 0 6px 6px";> 
+	</td>
+	
+	<td>
+		<input type="submit" value="Search" style="background: url(resources/images/search.png) no-repeat; width: 150px; height: 70px; padding:5px 0 0 7px; text-indent: -1000em; border: 0px; cursor: pointer; float: left; margin:5px 0 6px 6px"; >
+	</td>
+	
+<!-- 		<input name="search" type="text"  style="border:3 solid #407FC2; width:810px; height:50px; background-color: ; padding-left: 25px; padding-top: 7px; font-size:18px; color: #666; font-weight:bold;  width: 345px; height: 24px; margin-top: 1px; margin-right: 3px; vertical-align: middle;"> -->
+	<!-- 	 maxlength="20" size="20" BACKGROUND-COLOR: "#999999" -->
+<!-- 		<input type="submit" value="Search"  STYLE="width:100; height:25; cursor:hand; color:black; font-weight:bold">  -->
+	<!-- 	 background:url(); --></td>
 		</tr>
 	</table>
 	<div id='container'>
