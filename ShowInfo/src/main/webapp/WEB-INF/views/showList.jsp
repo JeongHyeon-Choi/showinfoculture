@@ -84,8 +84,6 @@
 	</tr>
 <!-- 	 background-color:#fff; margin:3px 0 6px 6px";  float: left;-->
 	<tr align="center" valign="middle">
-	<td>ㅇ
-	</td>
 	<td >
 		<form action="/show/search.do" method="post">
 		<input name="search" type="text" style="border: #3F0099 4px solid;  cursor: pointer; height:40px; width:350px;  font-size:20px; font-family:돋움, Dotum; font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
@@ -108,7 +106,7 @@
 		 <li><a href="/show/catShow.do?catVal=L000"><span>전시/기타</span></a></li>
 		 <li><a href="/show/catShow.do?catVal=D000"><span>미술</span></a></li>
 		 <li><a href="/show/catShow.do?catVal=C000"><span>무용</span></a></li>
-		 <li><a href='#'><span>Special Offers</span></a></li>
+		 <li><a href="/show/discountList.do"><span>Special Offers</span></a></li>
 		 <li><a href='#'><span>Best Shows</span></a></li>
 		 <li><a href='#'><span>Best Reviews</span></a></li>
 	</ul>
@@ -126,12 +124,12 @@
 		</c:if>
 		<table align="left">
 			<tr>
-				<td><a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}">
+				<td><a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">
 				<img src="${perForList.thumbnail}" style="width:230px; height:300px" float="left"></a></td>
 			</tr>
 			<tr>
 				 <td align="center" width="230px" height="60px" font="고딕" font-size="8px">
-				 <a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}">${perForList.title}</a></td>
+				 <a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">${perForList.title}</a></td>
 			</tr>
 			<tr>
 				 <td align="center" width="230px" height="60px" font="돋움" font-size="10px">${perForList.place}</td>
