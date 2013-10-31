@@ -48,6 +48,8 @@
 	//		alert(lat + ":" + lng + ":" + name);
 	
 		addMarker(my_latlng, name);
+		
+		setTimeout(function(){ about();}, 200);
 	}
 	
 	//지도에 마커출력
@@ -110,6 +112,16 @@
 	
 		var loc = document.getElementById("location");
 		loc.innerHTML = "실패 : " + errorCode + " / " + errorMessage;
+	}
+	
+	function how() {
+		$('tr[id=about]').hide();
+		$('div[id=map_canvas]').show();
+	}
+	
+	function about() {
+		$('tr[id=about]').show();
+		$('div[id=map_canvas]').hide();
 	}
 </script>
 
@@ -179,17 +191,22 @@
 	<table width="1000" align="center" cellspacing="30">
 
 	<tr> 
-		<td><img src="resources/images/about.png" ></td>
-		<td><img src="resources/images/how.png" ></td>
+		<td><img src="resources/images/about.png" onclick="about()"></td>
+		<td><img src="resources/images/how.png" onclick="how()" ></td>
 		<td><a href="${perForInfo.bookUrl}" target=_blank><img src="resources/images/buy.png" ></a></td>
 	</tr>
-	<tr>
-		<td colspan="3" align="center">${perForInfo.contents1}</td>
+	<tr id ="about">
+		<td  colspan="3" align="center">${perForInfo.contents1}</td>
 	</tr>
 	<tr>
 		<c:if test="${place != null}">
-			<td colspan="3" align="center" width="600px" height="600px">
+			<td colspan="3" align="center" width="600px" height="450px">
 			<div id="map_canvas" style="width: 100%; height: 100%"></div>
+			</td>
+		</c:if>
+		<c:if test="${place == null}">
+			<td>
+			공연장 정보가 없습니다.
 			</td>
 		</c:if>
 	</tr>
