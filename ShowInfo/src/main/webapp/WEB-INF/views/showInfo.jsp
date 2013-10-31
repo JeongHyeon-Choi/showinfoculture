@@ -134,7 +134,6 @@
 		setTimeout(function() {
 			about();
 		}, 100);
-about();
 		}
 	}
 </script>
