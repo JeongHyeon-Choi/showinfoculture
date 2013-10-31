@@ -74,26 +74,28 @@
 
 </head>
 <body>
-<div id="header">
-	<table align="center">
-	<tr>
-	<td>
-		<h1><a href="/show/list.do"><img src="resources/images/logo.png" /></a></h1>
-	</td>
 
-	<td>
+<div id="header">
+	<table align="center" valign="middle" cellpadding="0" cellspacing="1">
+	<tr align="center" valign="middle">
+	<td colspan="3">
+		<h1><a href="/show/list.do"><img width="600" height="80" src="resources/images/mainlogo.png" /></a></h1>
+	</td>
+	</tr>
+<!-- 	 background-color:#fff; margin:3px 0 6px 6px";  float: left;-->
+	<tr align="center" valign="middle">
+	<td>ㅇ
+	</td>
+	<td >
 		<form action="/show/search.do" method="post">
-		<input name="search" type="text" style="border: #407FC2 6px solid; height:60px; width:600px; padding:5px 0 0 7px; background-color:#fff; font-size:15px; font-family:돋움, Dotum; font-weight:bold; margin:5px 0 6px 6px";> 
-	</td>
+		<input name="search" type="text" style="border: #3F0099 4px solid;  cursor: pointer; height:40px; width:350px;  font-size:20px; font-family:돋움, Dotum; font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
+	</td> 
 	
 	<td>
-		<input type="submit" value="Search" style="background: url(resources/images/search.png) no-repeat; width: 150px; height: 70px; padding:5px 0 0 7px; text-indent: -1000em; border: 0px; cursor: pointer; float: left; margin:5px 0 6px 6px"; >
+		<input type="submit" value="Search" style="background: url(resources/images/searchbutton.png) no-repeat; cursor:hand; height: 60px;  width: 100px; text-indent: -1000em; border: 0px; padding:0 0 0 0; margin:0 0 0 0; " >
 	</td>
 	
-<!-- 		<input name="search" type="text"  style="border:3 solid #407FC2; width:810px; height:50px; background-color: ; padding-left: 25px; padding-top: 7px; font-size:18px; color: #666; font-weight:bold;  width: 345px; height: 24px; margin-top: 1px; margin-right: 3px; vertical-align: middle;"> -->
-	<!-- 	 maxlength="20" size="20" BACKGROUND-COLOR: "#999999" -->
-<!-- 		<input type="submit" value="Search"  STYLE="width:100; height:25; cursor:hand; color:black; font-weight:bold">  -->
-	<!-- 	 background:url(); --></td>
+
 		</tr>
 	</table>
 	<div id='container'>
@@ -106,7 +108,7 @@
 		 <li><a href="/show/catShow.do?catVal=L000"><span>전시/기타</span></a></li>
 		 <li><a href="/show/catShow.do?catVal=D000"><span>미술</span></a></li>
 		 <li><a href="/show/catShow.do?catVal=C000"><span>무용</span></a></li>
-		 <li><a href='/show/discountList.do'><span>Special Offers</span></a></li>
+		 <li><a href='#'><span>Special Offers</span></a></li>
 		 <li><a href='#'><span>Best Shows</span></a></li>
 		 <li><a href='#'><span>Best Reviews</span></a></li>
 	</ul>
@@ -124,12 +126,12 @@
 		</c:if>
 		<table align="left">
 			<tr>
-				<td><a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">
+				<td><a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}">
 				<img src="${perForList.thumbnail}" style="width:230px; height:300px" float="left"></a></td>
 			</tr>
 			<tr>
 				 <td align="center" width="230px" height="60px" font="고딕" font-size="8px">
-				 <a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">${perForList.title}</a></td>
+				 <a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}">${perForList.title}</a></td>
 			</tr>
 			<tr>
 				 <td align="center" width="230px" height="60px" font="돋움" font-size="10px">${perForList.place}</td>

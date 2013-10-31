@@ -48,10 +48,10 @@ public class Page {
 		
 		sb = new StringBuffer();
 		if(startPage < pageBlock) {
-			sb.append("<img src = 'D:/workspace/SpringSTS/ShowInfo/src/main/webapp/resources/images/hot.gif' width = '30' height = '9'>");
+			sb.append("<img src = 'resources/images/pre.png' width = '20' height = '20'>");
 		}
 		else {
-			sb.append("<img src = 'D:/workspace/SpringSTS/ShowInfo/src/main/webapp/resources/images/hot.gif' width = '30' height = '9'");
+			sb.append("<img src = 'resources/images/pre.png' width = '20' height = '20'");
 			sb.append(" onclick = 'location.href = \"");
 			sb.append(path);
 			sb.append("?cPage=\"");
@@ -77,9 +77,9 @@ public class Page {
 			}
 		}
 		
-		sb.append("&nbsp;|");
+		sb.append("| &nbsp;");
 		if(endPage < totalPage) {
-			sb.append("<img src = 'D:/workspace/SpringSTS/ShowInfo/src/main/webapp/resources/images/hot.gif' width = '30' height = '9'");
+			sb.append("<img src = 'resources/images/next.png' width = '20' height = '20'");
 			sb.append(" onclick = 'location.href = \"");
 			sb.append(path);
 			sb.append("?cPage=");
@@ -87,10 +87,11 @@ public class Page {
 			sb.append("\"' style='cursor:pointer'> ");
 		}
 		else {
-			sb.append("<img src = 'D:/workspace/SpringSTS/ShowInfo/src/main/webapp/resources/images/hot.gif' width = '30' height = '9'>");
+			sb.append("<img src = 'resources/images/next.png' width = '20' height = '20'>");
+
 		}
 	}
-
+	
 	public int getStartRow() {
 		return startRow;
 	}
