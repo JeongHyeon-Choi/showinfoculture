@@ -106,7 +106,7 @@
 		 <li><a href="/show/catShow.do?catVal=L000"><span>전시/기타</span></a></li>
 		 <li><a href="/show/catShow.do?catVal=D000"><span>미술</span></a></li>
 		 <li><a href="/show/catShow.do?catVal=C000"><span>무용</span></a></li>
-		 <li><a href='/show/discountList.do'><span>Special Offers</span></a></li>
+		 <li><a href="/show/discountList.do"><span>Special Offers</span></a></li>
 		 <li><a href='#'><span>Best Shows</span></a></li>
 		 <li><a href='#'><span>Best Reviews</span></a></li>
 	</ul>
@@ -118,21 +118,21 @@
 	<table width="1000px" align="center">
 	<tr>
 	<td>
-	<c:forEach var="perForList" items="${perForList}">
-		<c:if test="${perForList.count == 0}">
+	<c:forEach var="disCountList" items="${disCountList}">
+		<c:if test="${disCountList.count == 0}">
 			공연 목록을 찾을 수 없습니다
 		</c:if>
 		<table align="left">
 			<tr>
-				<td><a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}">
-				<img src="${perForList.thumbnail}" style="width:230px; height:300px" float="left"></a></td>
+				<td><a href="/show/read.do?seq=${disCountList.seq}&place=${disCountList.place}">
+				<img src="${disCountList.img}" style="width:230px; height:300px" float="left"></a></td>
 			</tr>
 			<tr>
 				 <td align="center" width="230px" height="60px" font="고딕" font-size="8px">
-				 <a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}">${perForList.title}</a></td>
+				 <a href="/show/read.do?seq=${disCountList.seq}&place=${disCountList.place}">${disCountList.title}</a></td>
 			</tr>
 			<tr>
-				 <td align="center" width="230px" height="60px" font="돋움" font-size="10px">${perForList.place}</td>
+				 <td align="center" width="230px" height="60px" font="돋움" font-size="10px">${disCountList.place}</td>
 			</tr>	 
 		</table>
 	</c:forEach>

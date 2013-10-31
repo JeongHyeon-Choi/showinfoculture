@@ -91,6 +91,45 @@ public class ShowServiceImpl implements ShowService {
 	}
 	
 	@Override
+	public List<DiscountVO> discountList(int rows, String cPage) throws Exception {
+		List<DiscountVO> discountList = new ArrayList<DiscountVO>();
+		
+		String url = "http://www.culture.go.kr/openapi/rest/ticketdiscounts?"
+				+ "ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D";
+		
+		Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(url);
+		XPath xpath = XPathFactory.newInstance().newXPath();
+		
+		String count = (String) xpath.evaluate("//msgBody/totalCount", document, XPathConstants.STRING);
+		NodeList seq = (NodeList)xpath.evaluate("//ticketList/seq", document, XPathConstants.NODESET);
+		NodeList title = (NodeList)xpath.evaluate("//ticketList/title", document, XPathConstants.NODESET);
+		NodeList img = (NodeList)xpath.evaluate("//ticketList/img", document, XPathConstants.NODESET);
+		NodeList ticketImg = (NodeList)xpath.evaluate("//ticketList/ticketImg", document, XPathConstants.NODESET);
+		NodeList price = (NodeList)xpath.evaluate("//ticketList/price", document, XPathConstants.NODESET);
+		NodeList startDate = (NodeList)xpath.evaluate("//ticketList/startDate", document, XPathConstants.NODESET);
+		NodeList endDate = (NodeList)xpath.evaluate("//ticketList/endDate", document, XPathConstants.NODESET);
+		NodeList place = (NodeList)xpath.evaluate("//ticketList/place", document, XPathConstants.NODESET);
+		NodeList discountRate = (NodeList)xpath.evaluate("//ticketList/discountRate", document, XPathConstants.NODESET);
+		
+		 for(int i=0; i<seq.getLength(); i++) {
+			DiscountVO dis = new DiscountVO();
+			dis.setCount(count);
+			dis.setSeq(seq.item(i).getTextContent());
+			dis.setTitle(title.item(i).getTextContent());
+			dis.setImg(img.item(i).getTextContent());
+			dis.setTicketImg(ticketImg.item(i).getTextContent());
+			dis.setPrice(price.item(i).getTextContent());
+			dis.setStartDate(startDate.item(i).getTextContent());
+			dis.setEndDate(endDate.item(i).getTextContent());
+			dis.setPlace(place.item(i).getTextContent());
+			dis.setDiscountRate(discountRate.item(i).getTextContent());
+			discountList.add(dis);
+		} 
+		
+		return discountList;
+	}
+	
+	@Override
 	public List<PerforListVO> searchList(int rows, String cPage, String keyword) throws Exception {
 		List<PerforListVO> perForList = new ArrayList<PerforListVO>();
 
@@ -221,6 +260,20 @@ public class ShowServiceImpl implements ShowService {
 		String url = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays/realm?"
 				+"ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D"
 				+ "&realmCode=" + catVal;
+		
+		Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(url);
+		XPath xpath = XPathFactory.newInstance().newXPath();
+		
+		String stringCount = (String) xpath.evaluate("//msgBody/totalCount", document, XPathConstants.STRING);
+		int count = Integer.parseInt(stringCount);
+		
+		return count;
+	}
+
+	@Override
+	public int getDiscountCount() throws Exception {
+		String url = "http://www.culture.go.kr/openapi/rest/ticketdiscounts?"
+				+ "ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D";
 		
 		Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(url);
 		XPath xpath = XPathFactory.newInstance().newXPath();

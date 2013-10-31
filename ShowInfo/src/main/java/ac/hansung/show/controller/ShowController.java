@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import ac.hansung.show.service.DiscountVO;
 import ac.hansung.show.service.Page;
 import ac.hansung.show.service.PerforInfoVO;
 import ac.hansung.show.service.PerforListVO;
@@ -50,7 +51,7 @@ public class ShowController {
 	}
 	
 	@RequestMapping("/catShow.do")
-	public ModelAndView showConcertList(HttpServletRequest req) throws Exception {
+	public ModelAndView showCatList(HttpServletRequest req) throws Exception {
 		int rows = 16;
 		int pageBlock = 10;
 		String catVal = req.getParameter("catVal");
@@ -119,6 +120,32 @@ public class ShowController {
 		mav.addObject("cPage", cPage);
 		
 		mav.setViewName("showList");
+		
+		return mav;
+	}
+	
+	@RequestMapping("/discountList.do")
+	public ModelAndView discountList(HttpServletRequest req) throws Exception {
+		int rows = 16;
+		int pageBlock = 10;
+		String path = "discountList.do";
+		String pageCode;
+		String cPage = req.getParameter("cPage");
+		ModelAndView mav = new ModelAndView();
+		
+		if(cPage == null)
+			cPage = "1";
+		
+		List<DiscountVO> disCountList = showService.discountList(rows, cPage);
+		
+		page.setPageInit(Integer.parseInt(cPage), showService.getDiscountCount(), rows, pageBlock, path);
+		pageCode = page.getSb().toString();
+		
+		mav.addObject("disCountList", disCountList);
+		mav.addObject("pageCode", pageCode);
+		mav.addObject("cPage", cPage);
+		
+		mav.setViewName("discountList");
 		
 		return mav;
 	}
