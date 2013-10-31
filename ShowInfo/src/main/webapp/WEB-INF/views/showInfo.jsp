@@ -21,8 +21,14 @@
 	var markersArray = [];
 	var infowindow = new google.maps.InfoWindow();
 
+	var addmap = '<td id="how" colspan="3" align="center" width="600px" height="450px">'+
+	'<c:if test="${place != null}">'+
+	'<div id="map_canvas" style="width: 100%; height: 100%"></div>'+
+	'</c:if> <c:if test="${place == null}">'+
+	'<div id="no_how" >공연장 정보가 없습니다.</div></c:if></td>';
+	
 	//초기 실행 함수
-	function initialize(coords) {
+	function initialize() {
 		
 		var lat;
 		var lng;
@@ -41,15 +47,12 @@
 			streetViewControl : true,
 			mapTypeControl : true,
 			mapTypeId : google.maps.MapTypeId.ROADMAP
-		}
-		
+		}		
 		map = new google.maps.Map(document.getElementById('map_canvas'),mapOptions);
 	
 	//		alert(lat + ":" + lng + ":" + name);
 	
 		addMarker(my_latlng, name);
-		
-		setTimeout(function(){ about();}, 200);
 	}
 	
 	//지도에 마커출력
@@ -69,7 +72,7 @@
 	function popInfoWindow(latlng, name) {
 		var geocoder = new google.maps.Geocoder();
 		map.setCenter(latlng);
-		addMarker(latlng); //마커출력
+		addMarker(latlng, name); //마커출력
 		geocoder.geocode({
 			'latLng' : latlng
 		}, function(results, status) {
@@ -116,12 +119,17 @@
 	
 	function how() {
 		$('tr[id=about]').hide();
-		$('div[id=map_canvas]').show();
+		$("tr[id=map]").children().remove();
+		$(addmap).appendTo("tr[id=map]");
+		initialize();
 	}
-	
+
 	function about() {
 		$('tr[id=about]').show();
-		$('div[id=map_canvas]').hide();
+		$("tr[id=map]").children().remove();
+	}
+	function start() {
+		about();
 	}
 </script>
 
@@ -191,29 +199,40 @@
 		</tr>
 	</c:if>
 	</table>
-	
-	<table width="1000" align="center" cellspacing="30">
+	<table align="center">
+		<tr>
+			<td width="30"><a
+				href="http://www.facebook.com/sharer.php?u='${url}' }"
+				target="_blank"> <img src="resources/images/facebook.gif"
+					style="width: 30px; height: 30px"></a></td>
+			<td width="30"><a
+				href="https://twitter.com/intent/tweet?source=webclient&text='${perForInfo.title} ${url }'"
+				target="_blank"> <img src="resources/images/twiiter.gif"
+					style="width: 30px; height: 30px"></a></td>
 
-	<tr> 
-		<td><img src="resources/images/about.png" onclick="about()"></td>
-		<td><img src="resources/images/how.png" onclick="how()" ></td>
-		<td><a href="${perForInfo.bookUrl}" target=_blank><img src="resources/images/buy.png" ></a></td>
-	</tr>
-	<tr id ="about">
-		<td  colspan="3" align="center">${perForInfo.contents1}</td>
-	</tr>
-	<tr>
-		<c:if test="${place != null}">
-			<td colspan="3" align="center" width="600px" height="450px">
-			<div id="map_canvas" style="width: 100%; height: 100%"></div>
-			</td>
-		</c:if>
-		<c:if test="${place == null}">
-			<td>
-			공연장 정보가 없습니다.
-			</td>
-		</c:if>
-	</tr>
+			<td width="30"><a
+				href="https://www.google.com/bookmarks/mark?op=add&amp;bkmk='${url }'&amp;title='${perForInfo.title }'"
+				target="_blank"> <img src="resources/images/google.gif"
+					style="width: 30px; height: 30px"></a></td>
+
+			<td width="30"><a
+				href="http://me2day.net/posts/new?new_post%5bbody%5d='${perForInfo.title} ${url }'"
+				target="_blank"> <img src="resources/images/me2day.gif"
+					style="width: 30px; height: 30px"></a></td>
+		</tr>
+	</table>
+
+	<table width="1000" align="center" cellspacing="30">
+		<tr>
+			<td><img src="resources/images/about.png" onclick="about()"></td>
+			<td><img src="resources/images/how.png" onclick="how()"></td>
+			<td><a href="${perForInfo.bookUrl}" target=_blank><img
+					src="resources/images/buy.png"></a></td>
+		</tr>
+		<tr id="about">
+			<td colspan="3" align="center">${perForInfo.contents1}</td>
+		</tr>
+		<tr id="map"></tr>
 	</table>
 	</body>
 </html>
