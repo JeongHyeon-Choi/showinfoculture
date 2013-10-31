@@ -99,12 +99,12 @@ public class ShowController {
 		if(cPage == null)
 			cPage = "1";
 		
-		List<DiscountVO> disCountList = showService.discountList(rows, cPage);
+		List<DiscountVO> discountList = showService.discountList(rows, cPage);
 		
 		page.setPageInit(Integer.parseInt(cPage), showService.getDiscountCount(), rows, pageBlock, path);
 		pageCode = page.getSb().toString();
 		
-		mav.addObject("disCountList", disCountList);
+		mav.addObject("discountList", discountList);
 		mav.addObject("pageCode", pageCode);
 		mav.addObject("cPage", cPage);
 		

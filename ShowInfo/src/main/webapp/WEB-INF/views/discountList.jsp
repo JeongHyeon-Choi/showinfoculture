@@ -118,21 +118,21 @@
 	<table width="1000px" align="center">
 	<tr>
 	<td>
-	<c:forEach var="disCountList" items="${disCountList}">
-		<c:if test="${disCountList.count == 0}">
+	<c:forEach var="discountList" items="${discountList}">
+		<c:if test="${discountList.count == 0}">
 			공연 목록을 찾을 수 없습니다
 		</c:if>
 		<table align="left">
 			<tr>
-				<td><a href="/show/read.do?seq=${disCountList.seq}&place=${disCountList.place}">
-				<img src="${disCountList.img}" style="width:230px; height:300px" float="left"></a></td>
+				<td><a href="/show/read.do?seq=${discountList.seq}&place=${discountList.place}">
+				<img src="${discountList.img}" style="width:230px; height:300px" float="left"></a></td>
 			</tr>
 			<tr>
 				 <td align="center" width="230px" height="60px" font="고딕" font-size="8px">
-				 <a href="/show/read.do?seq=${disCountList.seq}&place=${disCountList.place}">${disCountList.title}</a></td>
+				 <a href="/show/read.do?seq=${discountList.seq}&place=${discountList.place}">${discountList.title}</a></td>
 			</tr>
 			<tr>
-				 <td align="center" width="230px" height="60px" font="돋움" font-size="10px">${disCountList.place}</td>
+				 <td align="center" width="230px" height="60px" font="돋움" font-size="10px">${discountList.place}</td>
 			</tr>	 
 		</table>
 	</c:forEach>
