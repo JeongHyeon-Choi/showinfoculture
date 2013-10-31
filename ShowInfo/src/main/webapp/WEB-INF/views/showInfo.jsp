@@ -224,8 +224,8 @@
 
 	<table width="1000" align="center" cellspacing="30">
 		<tr>
-			<td><img src="resources/images/about.png" onclick="about()"></td>
-			<td><img src="resources/images/how.png" onclick="how()"></td>
+			<td><img src="resources/images/about.png" onclick="about()" style="cursor:pointer;"></td>
+			<td><img src="resources/images/how.png" onclick="how()" style="cursor:pointer;"></td>
 			<td><a href="${perForInfo.bookUrl}" target=_blank><img
 					src="resources/images/buy.png"></a></td>
 		</tr>

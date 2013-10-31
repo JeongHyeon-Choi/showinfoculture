@@ -86,11 +86,11 @@
 	<tr align="center" valign="middle">
 	<td >
 		<form action="/show/search.do" method="post">
-		<input name="search" type="text" style="border: #3F0099 4px solid;  cursor: pointer; height:40px; width:350px;  font-size:20px; font-family:돋움, Dotum; font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
+		<input name="search" type="text" style="border: #3F0099 4px solid;  height:40px; width:350px;  font-size:20px; font-family:돋움, Dotum; font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
 	</td> 
 	
 	<td>
-		<input type="submit" value="Search" style="background: url(resources/images/searchbutton.png) no-repeat; cursor:hand; height: 60px;  width: 100px; text-indent: -1000em; border: 0px; padding:0 0 0 0; margin:0 0 0 0; " >
+		<input type="submit" value="Search" style="background: url(resources/images/searchbutton.png) no-repeat; cursor: hand; height: 60px;  width: 100px; text-indent: -1000em; border: 0px; padding:0 0 0 0; margin:0 0 0 0; " >
 	</td>
 	
 
