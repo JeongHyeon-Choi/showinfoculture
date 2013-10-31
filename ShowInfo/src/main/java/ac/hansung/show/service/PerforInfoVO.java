@@ -11,7 +11,21 @@ public class PerforInfoVO {
 	String bookUrl;
 	String phone;
 	String imgUrl;
+	String ticketImg;
+	String discountRate;
 	
+	public String getTicketImg() {
+		return ticketImg;
+	}
+	public void setTicketImg(String ticketImg) {
+		this.ticketImg = ticketImg;
+	}
+	public String getDiscountRate() {
+		return discountRate;
+	}
+	public void setDiscountRate(String discountRate) {
+		this.discountRate = discountRate;
+	}
 	public String getTitle() {
 		return title;
 	}

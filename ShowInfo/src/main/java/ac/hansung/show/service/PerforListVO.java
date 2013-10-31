@@ -4,11 +4,8 @@ public class PerforListVO {
 	String count;
 	String seq;
 	String title;
-	String startDate;
-	String endDate;
 	String place;
 	String realmName;
-	String area;
 	String thumbnail;
 	
 	public String getCount() {
@@ -29,18 +26,6 @@ public class PerforListVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getStartDate() {
-		return startDate;
-	}
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-	}
-	public String getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-	}
 	public String getPlace() {
 		return place;
 	}
@@ -52,12 +37,6 @@ public class PerforListVO {
 	}
 	public void setRealmName(String realmName) {
 		this.realmName = realmName;
-	}
-	public String getArea() {
-		return area;
-	}
-	public void setArea(String area) {
-		this.area = area;
 	}
 	public String getThumbnail() {
 		return thumbnail;

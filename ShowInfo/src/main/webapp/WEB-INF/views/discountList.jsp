@@ -61,7 +61,7 @@
 		border-right: 1px solid #b2c58b;
 	}
 	#container li:hover {
-		background: #9cb369 url(pattern.png) top left repeat;
+		background: #9cb369 top left repeat;
 	}
 	#container li:first-child {
 		border-left: none;

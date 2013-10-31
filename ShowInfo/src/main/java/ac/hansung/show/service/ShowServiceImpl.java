@@ -27,11 +27,8 @@ public class ShowServiceImpl implements ShowService {
 		String count = (String) xpath.evaluate("//msgBody/totalCount", document, XPathConstants.STRING);
 		NodeList seq = (NodeList)xpath.evaluate("//perforList/seq", document, XPathConstants.NODESET);
 		NodeList title = (NodeList)xpath.evaluate("//perforList/title", document, XPathConstants.NODESET);
-		NodeList startDate = (NodeList)xpath.evaluate("//perforList/startDate", document, XPathConstants.NODESET);
-		NodeList endDate = (NodeList)xpath.evaluate("//perforList/endDate", document, XPathConstants.NODESET);
 		NodeList place = (NodeList)xpath.evaluate("//perforList/place", document, XPathConstants.NODESET);
 		NodeList realmName = (NodeList)xpath.evaluate("//perforList/realmName", document, XPathConstants.NODESET);
-		NodeList area = (NodeList)xpath.evaluate("//perforList/area", document, XPathConstants.NODESET);
 		NodeList thumbnail = (NodeList)xpath.evaluate("//perforList/thumbnail", document, XPathConstants.NODESET);
 		
 		for(int i=0; i<seq.getLength(); i++) {
@@ -39,11 +36,8 @@ public class ShowServiceImpl implements ShowService {
 			pfl.setCount(count);
 			pfl.setSeq(seq.item(i).getTextContent());
 			pfl.setTitle(title.item(i).getTextContent());
-			pfl.setStartDate(startDate.item(i).getTextContent());
-			pfl.setEndDate(endDate.item(i).getTextContent());
 			pfl.setPlace(place.item(i).getTextContent());
 			pfl.setRealmName(realmName.item(i).getTextContent());
-			pfl.setArea(area.item(i).getTextContent());
 			pfl.setThumbnail(thumbnail.item(i).getTextContent());
 			perForList.add(pfl);
 		}
@@ -66,11 +60,8 @@ public class ShowServiceImpl implements ShowService {
 		String count = (String) xpath.evaluate("//msgBody/totalCount", document, XPathConstants.STRING);
 		NodeList seq = (NodeList)xpath.evaluate("//perforList/seq", document, XPathConstants.NODESET);
 		NodeList title = (NodeList)xpath.evaluate("//perforList/title", document, XPathConstants.NODESET);
-		NodeList startDate = (NodeList)xpath.evaluate("//perforList/startDate", document, XPathConstants.NODESET);
-		NodeList endDate = (NodeList)xpath.evaluate("//perforList/endDate", document, XPathConstants.NODESET);
 		NodeList place = (NodeList)xpath.evaluate("//perforList/place", document, XPathConstants.NODESET);
 		NodeList realmName = (NodeList)xpath.evaluate("//perforList/realmName", document, XPathConstants.NODESET);
-		NodeList area = (NodeList)xpath.evaluate("//perforList/area", document, XPathConstants.NODESET);
 		NodeList thumbnail = (NodeList)xpath.evaluate("//perforList/thumbnail", document, XPathConstants.NODESET);
 		
 		for(int i=0; i<seq.getLength(); i++) {
@@ -78,11 +69,8 @@ public class ShowServiceImpl implements ShowService {
 			pfl.setCount(count);
 			pfl.setSeq(seq.item(i).getTextContent());
 			pfl.setTitle(title.item(i).getTextContent());
-			pfl.setStartDate(startDate.item(i).getTextContent());
-			pfl.setEndDate(endDate.item(i).getTextContent());
 			pfl.setPlace(place.item(i).getTextContent());
 			pfl.setRealmName(realmName.item(i).getTextContent());
-			pfl.setArea(area.item(i).getTextContent());
 			pfl.setThumbnail(thumbnail.item(i).getTextContent());
 			perForList.add(pfl);
 		}
@@ -104,12 +92,7 @@ public class ShowServiceImpl implements ShowService {
 		NodeList seq = (NodeList)xpath.evaluate("//ticketList/seq", document, XPathConstants.NODESET);
 		NodeList title = (NodeList)xpath.evaluate("//ticketList/title", document, XPathConstants.NODESET);
 		NodeList img = (NodeList)xpath.evaluate("//ticketList/img", document, XPathConstants.NODESET);
-		NodeList ticketImg = (NodeList)xpath.evaluate("//ticketList/ticketImg", document, XPathConstants.NODESET);
-		NodeList price = (NodeList)xpath.evaluate("//ticketList/price", document, XPathConstants.NODESET);
-		NodeList startDate = (NodeList)xpath.evaluate("//ticketList/startDate", document, XPathConstants.NODESET);
-		NodeList endDate = (NodeList)xpath.evaluate("//ticketList/endDate", document, XPathConstants.NODESET);
 		NodeList place = (NodeList)xpath.evaluate("//ticketList/place", document, XPathConstants.NODESET);
-		NodeList discountRate = (NodeList)xpath.evaluate("//ticketList/discountRate", document, XPathConstants.NODESET);
 		
 		 for(int i=0; i<seq.getLength(); i++) {
 			DiscountVO dis = new DiscountVO();
@@ -117,12 +100,7 @@ public class ShowServiceImpl implements ShowService {
 			dis.setSeq(seq.item(i).getTextContent());
 			dis.setTitle(title.item(i).getTextContent());
 			dis.setImg(img.item(i).getTextContent());
-			dis.setTicketImg(ticketImg.item(i).getTextContent());
-			dis.setPrice(price.item(i).getTextContent());
-			dis.setStartDate(startDate.item(i).getTextContent());
-			dis.setEndDate(endDate.item(i).getTextContent());
 			dis.setPlace(place.item(i).getTextContent());
-			dis.setDiscountRate(discountRate.item(i).getTextContent());
 			discountList.add(dis);
 		} 
 		
@@ -143,11 +121,7 @@ public class ShowServiceImpl implements ShowService {
 		String count = (String) xpath.evaluate("//msgBody/totalCount", document, XPathConstants.STRING);
 		NodeList seq = (NodeList)xpath.evaluate("//perforList/seq", document, XPathConstants.NODESET);
 		NodeList title = (NodeList)xpath.evaluate("//perforList/title", document, XPathConstants.NODESET);
-		NodeList startDate = (NodeList)xpath.evaluate("//perforList/startDate", document, XPathConstants.NODESET);
-		NodeList endDate = (NodeList)xpath.evaluate("//perforList/endDate", document, XPathConstants.NODESET);
 		NodeList place = (NodeList)xpath.evaluate("//perforList/place", document, XPathConstants.NODESET);
-		NodeList realmName = (NodeList)xpath.evaluate("//perforList/realmName", document, XPathConstants.NODESET);
-		NodeList area = (NodeList)xpath.evaluate("//perforList/area", document, XPathConstants.NODESET);
 		NodeList thumbnail = (NodeList)xpath.evaluate("//perforList/thumbnail", document, XPathConstants.NODESET);
 		
 		for(int i=0; i<seq.getLength(); i++) {
@@ -155,11 +129,7 @@ public class ShowServiceImpl implements ShowService {
 			pfl.setCount(count);
 			pfl.setSeq(seq.item(i).getTextContent());
 			pfl.setTitle(title.item(i).getTextContent());
-			pfl.setStartDate(startDate.item(i).getTextContent());
-			pfl.setEndDate(endDate.item(i).getTextContent());
 			pfl.setPlace(place.item(i).getTextContent());
-			pfl.setRealmName(realmName.item(i).getTextContent());
-			pfl.setArea(area.item(i).getTextContent());
 			pfl.setThumbnail(thumbnail.item(i).getTextContent());
 			perForList.add(pfl);
 		}
@@ -194,11 +164,13 @@ public class ShowServiceImpl implements ShowService {
 	}
 	
 	@Override
-	public PerforInfoVO showInfoView(String seq) throws Exception {
+	public PerforInfoVO showInfoView(String seq, String keyword) throws Exception {
 		String showUrl = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays/d/?"
 				+ "seq=" + seq + "&ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D";
+		String disUrl = "http://www.culture.go.kr/openapi/rest/ticketdiscounts?ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D" + keyword;
 		
 		Document showDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(showUrl);
+		Document disDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(disUrl);
 		XPath xpath = XPathFactory.newInstance().newXPath();
 		
 		String title = (String)xpath.evaluate("//perforInfo/title", showDocument, XPathConstants.STRING);
@@ -211,6 +183,9 @@ public class ShowServiceImpl implements ShowService {
 		String bookUrl = (String)xpath.evaluate("//perforInfo/url", showDocument, XPathConstants.STRING);
 		String phone = (String)xpath.evaluate("//perforInfo/phone", showDocument, XPathConstants.STRING);
 		String imgUrl = (String)xpath.evaluate("//perforInfo/imgUrl", showDocument, XPathConstants.STRING);
+		String ticketImg = (String)xpath.evaluate("//ticketList/ticketImg", disDocument, XPathConstants.STRING);
+		String discountRate = (String)xpath.evaluate("//ticketList/discountRate", disDocument, XPathConstants.STRING);
+		
 		
 		PerforInfoVO pfi = new PerforInfoVO();
 		pfi.setTitle(title);
@@ -223,6 +198,8 @@ public class ShowServiceImpl implements ShowService {
 		pfi.setBookUrl(bookUrl);
 		pfi.setPhone(phone);
 		pfi.setImgUrl(imgUrl);
+		pfi.setTicketImg(ticketImg);
+		pfi.setDiscountRate(discountRate);
 		
 		return pfi;
 	}

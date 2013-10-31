@@ -87,6 +87,32 @@ public class ShowController {
 		return mav;
 	}
 	
+	@RequestMapping("/discountList.do")
+	public ModelAndView discountList(HttpServletRequest req) throws Exception {
+		int rows = 16;
+		int pageBlock = 10;
+		String path = "discountList.do";
+		String pageCode;
+		String cPage = req.getParameter("cPage");
+		ModelAndView mav = new ModelAndView();
+		
+		if(cPage == null)
+			cPage = "1";
+		
+		List<DiscountVO> disCountList = showService.discountList(rows, cPage);
+		
+		page.setPageInit(Integer.parseInt(cPage), showService.getDiscountCount(), rows, pageBlock, path);
+		pageCode = page.getSb().toString();
+		
+		mav.addObject("disCountList", disCountList);
+		mav.addObject("pageCode", pageCode);
+		mav.addObject("cPage", cPage);
+		
+		mav.setViewName("discountList");
+		
+		return mav;
+	}
+	
 	@RequestMapping("/search.do")
 	public ModelAndView searchList(HttpServletRequest req) throws Exception {
 		int rows = 16;
@@ -124,47 +150,29 @@ public class ShowController {
 		return mav;
 	}
 	
-	@RequestMapping("/discountList.do")
-	public ModelAndView discountList(HttpServletRequest req) throws Exception {
-		int rows = 16;
-		int pageBlock = 10;
-		String path = "discountList.do";
-		String pageCode;
-		String cPage = req.getParameter("cPage");
-		ModelAndView mav = new ModelAndView();
-		
-		if(cPage == null)
-			cPage = "1";
-		
-		List<DiscountVO> disCountList = showService.discountList(rows, cPage);
-		
-		page.setPageInit(Integer.parseInt(cPage), showService.getDiscountCount(), rows, pageBlock, path);
-		pageCode = page.getSb().toString();
-		
-		mav.addObject("disCountList", disCountList);
-		mav.addObject("pageCode", pageCode);
-		mav.addObject("cPage", cPage);
-		
-		mav.setViewName("discountList");
-		
-		return mav;
-	}
-
 	@RequestMapping("/read.do")
 	public ModelAndView showInfo(HttpServletRequest req) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		String address = null;
+		String keyword = null;
 		String seq = req.getParameter("seq");
 		String mapPlace = req.getParameter("place");
+		String title = req.getParameter("title");
+	
 		mapPlace = new String(mapPlace.getBytes("8859_1"), "utf-8");
+		title = new String(title.getBytes("8859_1"), "utf-8");
 		
 		if(mapPlace != null) {
 			address = "&keyword=" + URLEncoder.encode(mapPlace, "utf-8");
 		}
 		
-		PlaceVO pf = showService.mapView(address);
-		PerforInfoVO pfi = showService.showInfoView(seq);
+		if(title != null) {
+			keyword = "&keyword=" + URLEncoder.encode(title, "utf-8");
+		}
 		
+		PlaceVO pf = showService.mapView(address);
+		PerforInfoVO pfi = showService.showInfoView(seq, keyword);
+	
 		mav.addObject("perForInfo", pfi);
 		mav.addObject("place", pf);
 		

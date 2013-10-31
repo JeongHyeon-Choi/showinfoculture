@@ -61,7 +61,7 @@
 		border-right: 1px solid #b2c58b;
 	}
 	#container li:hover {
-		background: #9cb369 url(pattern.png) top left repeat;
+		background: #9cb369 top left repeat;
 	}
 	#container li:first-child {
 		border-left: none;
@@ -124,12 +124,12 @@
 		</c:if>
 		<table align="left">
 			<tr>
-				<td><a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}">
+				<td><a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">
 				<img src="${perForList.thumbnail}" style="width:230px; height:300px" float="left"></a></td>
 			</tr>
 			<tr>
 				 <td align="center" width="230px" height="60px" font="고딕" font-size="8px">
-				 <a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}">${perForList.title}</a></td>
+				 <a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">${perForList.title}</a></td>
 			</tr>
 			<tr>
 				 <td align="center" width="230px" height="60px" font="돋움" font-size="10px">${perForList.place}</td>
