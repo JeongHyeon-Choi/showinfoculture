@@ -17,6 +17,7 @@ import ac.hansung.show.service.PerforListVO;
 import ac.hansung.show.service.PlaceVO;
 import ac.hansung.show.service.ShowService;
 
+// 주석
 @Controller
 public class ShowController {
 	@Resource
