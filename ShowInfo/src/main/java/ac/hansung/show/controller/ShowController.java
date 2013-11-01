@@ -188,7 +188,7 @@ public class ShowController {
 		String mapPlace = req.getParameter("place");
 		String keyword = null;
 		String address = null;;
-		
+
 		title = new String(title.getBytes("8859_1"), "utf-8");
 		mapPlace = new String(mapPlace.getBytes("8859_1"), "utf-8");
 		
