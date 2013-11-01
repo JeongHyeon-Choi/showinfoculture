@@ -203,21 +203,21 @@
 		<tr>
 			<td width="30"><a
 				href="http://www.facebook.com/sharer.php?u='${url}' }"
-				target="_blank"> <img src="resources/images/facebook.gif"
+				target="_blank"> <img src="resources/images/facebook.png"
 					style="width: 30px; height: 30px"></a></td>
 			<td width="30"><a
 				href="https://twitter.com/intent/tweet?source=webclient&text='${perForInfo.title} ${url }'"
-				target="_blank"> <img src="resources/images/twiiter.gif"
+				target="_blank"> <img src="resources/images/twitter.png"
 					style="width: 30px; height: 30px"></a></td>
 
 			<td width="30"><a
 				href="https://www.google.com/bookmarks/mark?op=add&amp;bkmk='${url }'&amp;title='${perForInfo.title }'"
-				target="_blank"> <img src="resources/images/google.gif"
+				target="_blank"> <img src="resources/images/google.png"
 					style="width: 30px; height: 30px"></a></td>
 
 			<td width="30"><a
 				href="http://me2day.net/posts/new?new_post%5bbody%5d='${perForInfo.title} ${url }'"
-				target="_blank"> <img src="resources/images/me2day.gif"
+				target="_blank"> <img src="resources/images/me2day.png"
 					style="width: 30px; height: 30px"></a></td>
 		</tr>
 	</table>
