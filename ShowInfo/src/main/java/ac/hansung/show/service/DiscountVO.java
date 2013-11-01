@@ -1,5 +1,6 @@
 package ac.hansung.show.service;
 
+// 할인 되는 공연의 목록에 대한 정보를 담을 VO
 public class DiscountVO {
 	private String count;
 	private String seq;

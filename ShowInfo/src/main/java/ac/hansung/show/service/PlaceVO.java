@@ -1,5 +1,6 @@
 package ac.hansung.show.service;
 
+// 공연 장소에 대한 정보를 담을 VO
 public class PlaceVO {
 
 	private String seq;

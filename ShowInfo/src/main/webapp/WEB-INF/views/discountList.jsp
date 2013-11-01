@@ -124,12 +124,12 @@
 		</c:if>
 		<table align="left">
 			<tr>
-				<td><a href="/show/discountRead.do?title=${discountList.title}&place=${perForList.place}">
+				<td><a href="/show/discountRead.do?title=${discountList.title}&place=${discountList.place}">
 				<img src="${discountList.img}" style="width:230px; height:300px" float="left"></a></td>
 			</tr>
 			<tr>
 				 <td align="center" width="230px" height="60px" font="고딕" font-size="8px">
-				 <a href="/show/discountRead.do?title=${discountList.title}&place=${perForList.place}">${discountList.title}</a></td>
+				 <a href="/show/discountRead.do?title=${discountList.title}&place=${discountList.place}">${discountList.title}</a></td>
 			</tr>
 			<tr>
 				 <td align="center" width="230px" height="60px" font="돋움" font-size="10px">${discountList.place}</td>
