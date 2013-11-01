@@ -19,7 +19,6 @@ import ac.hansung.show.service.ShowService;
 
 @Controller
 public class ShowController {
-//	주석
 	@Resource
 	Page page;
 	@Resource

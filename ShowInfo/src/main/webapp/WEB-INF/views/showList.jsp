@@ -4,7 +4,6 @@
 <html>
 <head>
 <title>공연 목록</title>
-<!-- 주석달기 -->
 
 <style type="text/css">
 	#header{position:relative; width:auto;}
