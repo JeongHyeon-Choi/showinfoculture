@@ -260,4 +260,17 @@ public class ShowServiceImpl implements ShowService {
 		
 		return count;
 	}
+
+	@Override
+	public String getShowSeq(String keyword) throws Exception {
+		String url = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays/period?"
+				+ "ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D&keyword=" + keyword;
+		
+		Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(url);
+		XPath xpath = XPathFactory.newInstance().newXPath();
+		
+		String seq = (String)xpath.evaluate("//perforList/seq", document, XPathConstants.STRING);
+		
+		return seq;
+	}
 }

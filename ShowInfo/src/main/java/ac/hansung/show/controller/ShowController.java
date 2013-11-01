@@ -181,27 +181,34 @@ public class ShowController {
 		return mav;
 	}
 	
-//	@RequestMapping("/discountRead.do")
-//	public ModelAndView discountShowInfo(HttpServletRequest req) throws Exception {
-//		ModelAndView mav = new ModelAndView();
-//		String seq = req.getParameter("seq");
-//		String mapPlace = req.getParameter("place");
-//		String address = null;
-//		
-//		mapPlace = new String(mapPlace.getBytes("8859_1"), "utf-8");
-//		
-//		if(mapPlace != null) {
-//			address = "&keyword=" + URLEncoder.encode(mapPlace, "utf-8");
-//		}
-//		
-//		PlaceVO pf = showService.mapView(address);
-//		DiscountPerforInfoVO pfi = showService.discountShowInfo(seq);
-//		
-//		mav.addObject("perForInfo", pfi);
-//		mav.addObject("place", pf);
-//		
-//		mav.setViewName("discountShowInfo");
-//		
-//		return mav;
-//	}
+	@RequestMapping("/discountRead.do")
+	public ModelAndView discountShowInfo(HttpServletRequest req) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String title = req.getParameter("title");
+		String mapPlace = req.getParameter("place");
+		String keyword = null;
+		String address = null;;
+		
+		title = new String(title.getBytes("8859_1"), "utf-8");
+		mapPlace = new String(mapPlace.getBytes("8859_1"), "utf-8");
+		
+		if(title != null) {
+			keyword = "&keyword=" + URLEncoder.encode(title, "utf-8");
+		}
+		
+		if(mapPlace != null) {
+			address = "&keyword=" + URLEncoder.encode(mapPlace, "utf-8");
+		}
+		
+		String seq = showService.getShowSeq(keyword);
+		PerforInfoVO pfi = showService.showInfoView(seq, keyword);
+		PlaceVO pf = showService.mapView(address);
+		
+		mav.addObject("perForInfo", pfi);
+		mav.addObject("place", pf);
+		
+		mav.setViewName("showInfo");
+		
+		return mav;
+	}
 }
