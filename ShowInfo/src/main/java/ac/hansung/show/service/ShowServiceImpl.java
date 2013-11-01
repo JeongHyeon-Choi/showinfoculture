@@ -14,13 +14,17 @@ import org.w3c.dom.NodeList;
 
 @Service
 public class ShowServiceImpl implements ShowService {
+//	모든 공연의 List를 출력하는 메소드
 	@Override
 	public List<PerforListVO> showAllList(int rows, String cPage) throws Exception {
+//		모든 공연 List를 담아 올 List
 		List<PerforListVO> perForList = new ArrayList<PerforListVO>();
-
+		
+//		모든 공연 List가 보여질 xml의 Url 주소
 		String url = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays/period?"
 				+ "ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D&rows=" + rows + "&cPage=" + cPage;
 		
+//		XPath 클래스로 받아온 xml 파싱 및 element의 값 얻어옴
 		Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(url);
 		XPath xpath = XPathFactory.newInstance().newXPath();
 		
@@ -31,6 +35,7 @@ public class ShowServiceImpl implements ShowService {
 		NodeList realmName = (NodeList)xpath.evaluate("//perforList/realmName", document, XPathConstants.NODESET);
 		NodeList thumbnail = (NodeList)xpath.evaluate("//perforList/thumbnail", document, XPathConstants.NODESET);
 		
+//		공연 List가 담길 VO에 값을 저장하고 List에 추가
 		for(int i=0; i<seq.getLength(); i++) {
 			PerforListVO pfl = new PerforListVO();
 			pfl.setCount(count);
@@ -45,11 +50,14 @@ public class ShowServiceImpl implements ShowService {
 		return perForList;
 	}
 	
+//	카테고리에 따른 공연 List를 가져오는 메소드
 	@Override
 	public List<PerforListVO> showCatList(int rows, String cPage, String realmCode)
 			throws Exception {
+//		카테고리에 따른 공연 List를 담기 위한 List
 		List<PerforListVO> perForList = new ArrayList<PerforListVO>();
 		
+//		카테고리에 따른 공연 List가 보여질 xml의 주소 Url
 		String url = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays/realm?"
 				+"ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D"
 				+ "&rows=" + rows + "&cPage=" + cPage + realmCode;
@@ -78,10 +86,13 @@ public class ShowServiceImpl implements ShowService {
 		return perForList;
 	}
 	
+//	할인 되는 공연 List를 가져오는 메소드
 	@Override
 	public List<DiscountVO> discountList(int rows, String cPage) throws Exception {
+//		할인 되는 공연 List가 담길 List
 		List<DiscountVO> discountList = new ArrayList<DiscountVO>();
 		
+//		할인 되는 공연 List가 보여질 xml의 Url
 		String url = "http://www.culture.go.kr/openapi/rest/ticketdiscounts?"
 				+ "ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D";
 		
@@ -107,10 +118,13 @@ public class ShowServiceImpl implements ShowService {
 		return discountList;
 	}
 	
+//	검색 keyword에 따른 공연 List를 가져오기 위한 메소드
 	@Override
 	public List<PerforListVO> searchList(int rows, String cPage, String keyword) throws Exception {
+//		검색 keyword에 따른 공연 List가 담길 List
 		List<PerforListVO> perForList = new ArrayList<PerforListVO>();
-
+		
+//		검색 keyword에 따른 공연 List가 보여질 xml의 Url
 		String url = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays/period?"
 				+ "ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D"
 				+ "&rows=" + rows + "&cPage=" + cPage + keyword;
@@ -137,11 +151,15 @@ public class ShowServiceImpl implements ShowService {
 		return perForList;
 	}
 	
+//	맵 정보를 가져오기 위한 메소드
 	@Override
-	public PlaceVO mapView(String requestPath) throws Exception {
+	public PlaceVO mapView(String address) throws Exception {
+//		공연 장소에 대한 정보가 보여질 xml의 Url
 		String mapUrl = "http://www.culture.go.kr/openapi/rest/cultureartspaces/performingplace?"
 				+ "ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D";
-		mapUrl = mapUrl + requestPath;
+		
+//		공연에 따른 공연 장소를 xml의 Url에 추가
+		mapUrl = mapUrl + address;
 		
 		Document mapDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(mapUrl);
 		XPath xpath = XPathFactory.newInstance().newXPath();
@@ -152,6 +170,7 @@ public class ShowServiceImpl implements ShowService {
 		
 		PlaceVO pf = new PlaceVO();
 		
+//		공연 장소에 대한 정보를 VO에 담아 옴
 		if (culName.getLength() != 0) {
 			pf.setCulName(culName.item(0).getTextContent());
 			pf.setGpsX(gpsX.item(0).getTextContent());
@@ -163,10 +182,13 @@ public class ShowServiceImpl implements ShowService {
 		return pf;
 	}
 	
+//	할인 되는 seq값을 통해 할인 되는 공연의 정보를 가져오기 위한 메소드
 	@Override
 	public PerforInfoVO showInfoView(String seq, String keyword) throws Exception {
+//		공연 seq에 따른 공연 정보를 보여주기 위한 xml의 Url
 		String showUrl = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays/d/?"
 				+ "seq=" + seq + "&ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D";
+//		공연 제목에 따른 할인 정보를 보여주기 위한 xml의 Url
 		String disUrl = "http://www.culture.go.kr/openapi/rest/ticketdiscounts?ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D" + keyword;
 		
 		Document showDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(showUrl);
@@ -186,7 +208,7 @@ public class ShowServiceImpl implements ShowService {
 		String ticketImg = (String)xpath.evaluate("//ticketList/ticketImg", disDocument, XPathConstants.STRING);
 		String discountRate = (String)xpath.evaluate("//ticketList/discountRate", disDocument, XPathConstants.STRING);
 		
-		
+//		공연 정보를 VO에 담아 옴
 		PerforInfoVO pfi = new PerforInfoVO();
 		pfi.setTitle(title);
 		pfi.setStartDate(startDate);
@@ -204,8 +226,10 @@ public class ShowServiceImpl implements ShowService {
 		return pfi;
 	}
 	
+//	모든 공연의 수를 가져오는 메소드
 	@Override
 	public int getListCount() throws Exception {
+//		모든 공연 List를 가져오기 위한 xml의 Url
 		String url = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays/period?"
 				+ "ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D";
 		
@@ -218,8 +242,10 @@ public class ShowServiceImpl implements ShowService {
 		return count;
 	}
 	
+//	공연 검색 시 검색 되는 공연의 수를 가져오기 위한 메소드
 	@Override
 	public int getSearchCount(String keyword) throws Exception {
+//		검색 keyword에 따른 공연의 List를 보여주기 위한 xml의 Url
 		String url = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays/period?"
 				+ "ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D" + keyword;
 		
@@ -231,9 +257,11 @@ public class ShowServiceImpl implements ShowService {
 		
 		return count;
 	}
-
+	
+//	카테고리에 따른 공연의 수를 가져오기 위한 메소드
 	@Override
 	public int getCatCount(String catVal) throws Exception {
+//		카테고리에 따른 공연의 List를 보여주기 위한 xml의 Url
 		String url = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays/realm?"
 				+"ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D"
 				+ "&realmCode=" + catVal;
@@ -246,9 +274,11 @@ public class ShowServiceImpl implements ShowService {
 		
 		return count;
 	}
-
+	
+//	할인 되는 공연의 수를 가져오기 위한 메소드
 	@Override
 	public int getDiscountCount() throws Exception {
+//		할인 되는 공연 List를 보여주기 위한 xml의 Url
 		String url = "http://www.culture.go.kr/openapi/rest/ticketdiscounts?"
 				+ "ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D";
 		
@@ -260,9 +290,11 @@ public class ShowServiceImpl implements ShowService {
 		
 		return count;
 	}
-
+	
+//	할인 되는 공연의 제목에 따라 공연 정보의 seq 값을 얻기 위한 메소드
 	@Override
 	public String getShowSeq(String keyword) throws Exception {
+//		할인 되는 공연의 제목에 따라 공연 정보를 보여주기 위한 xml의 Url
 		String url = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays/period?"
 				+ "ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D" + keyword;
 		

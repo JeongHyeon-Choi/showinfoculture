@@ -1,5 +1,6 @@
 package ac.hansung.show.service;
 
+// 공연 목록에 대한 정보를 담을 VO
 public class PerforListVO {
 	String count;
 	String seq;
