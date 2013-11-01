@@ -24,11 +24,11 @@
 	}
 	#container ul {
 		zoom: 1;
-		background: #a7bc7a top left repeat;
+		background: #9354ED top left repeat;
 		-webkit-border-radius: 4px;
 		-moz-border-radius: 4px;
 		border-radius: 4px;
-		border: 1px solid #839b4e;
+		border: 1px solid #9354ED;
 		-moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 		-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
@@ -45,15 +45,16 @@
 	#container a,
 	#container a:link,
 	#container a:visited {
-		padding: 15px 20px;
+		padding: 20px 20px;
 		display: block;
 		text-decoration: none;
+		font:15px "MD아롱체";
 		color: #ffffff;
 		text-shadow: 0 -1px 1px #586835;
 		border-right: 1px solid #839b4e;
 	}
 	#container a:hover {
-		color: #586835;
+		color: #ffffff;
 		text-shadow: 0 1px 1px #bdcd9c;
 	}
 	#container li {
@@ -61,7 +62,7 @@
 		border-right: 1px solid #b2c58b;
 	}
 	#container li:hover {
-		background: #9cb369 top left repeat;
+		background: #F361DC top left repeat;
 	}
 	#container li:first-child {
 		border-left: none;
@@ -82,11 +83,13 @@
 		<h1><a href="/show/list.do"><img width="600" height="80" src="resources/images/mainlogo.png" /></a></h1>
 	</td>
 	</tr>
-<!-- 	 background-color:#fff; margin:3px 0 6px 6px";  float: left;-->
+
 	<tr align="center" valign="middle">
 	<td >
 		<form action="/show/search.do" method="post">
-		<input name="search" type="text" style="border: #3F0099 4px solid; height:40px; width:350px;  font-size:20px; font-family:돋움, Dotum; font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
+
+		<input name="search" type="text" style="border: #870073 4px solid;  cursor:pointer; height:40px; width:350px;  font-size:20px; font-family:돋움, Dotum; font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
+
 	</td> 
 	
 	<td>
