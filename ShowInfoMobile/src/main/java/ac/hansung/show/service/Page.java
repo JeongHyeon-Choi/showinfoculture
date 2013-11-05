@@ -54,7 +54,7 @@ public class Page {
 			sb.append("<img src = 'resources/images/pre.png' width = '20' height = '20'");
 			sb.append(" onclick = 'location.href = \"");
 			sb.append(path);
-			sb.append("?cPage=\"");
+			sb.append("?cPage=");
 			sb.append(startPage - pageBlock);
 			sb.append("\"' style = 'cursor:pointer'> ");
 		}
