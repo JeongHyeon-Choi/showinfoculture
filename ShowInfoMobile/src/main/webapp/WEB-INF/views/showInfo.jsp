@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>공연 정보 - ${perForInfo.title}</title>
@@ -133,6 +133,111 @@
 	}
 </script>
 
+ <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+			
+			//초기화
+			FB.init({
+				appId      : '542875349069066', // App ID
+				//channelUrl : '//127.0.0.1:8020/rotuebook_html5/WebContent/testCase//FB_channel.html', // Channel File
+				status     : true, // check login status
+				cookie     : true, // enable cookies to allow the server to access the session
+				xfbml      : true  // parse XFBML
+			});
+			
+			// Additional initialization code here
+			/*
+			FB.ui({ method: 'feed', 
+			  message: 'Facebook for Websites is super-cool'
+			 });
+			*/
+			
+			//페이지 로드 했을시 호출 
+			FB.getLoginStatus(function(response) {
+				if (response.status === 'connected') {
+					
+					FB.api('/me', function(user) {
+						if (user) {
+							console.log(user.name);
+			
+							var image = document.getElementById('image');
+							image.src = 'http://graph.facebook.com/' + user.id + '/picture';
+							var name = document.getElementById('name');
+							name.innerHTML = user.name
+							var id = document.getElementById('id');
+							id.innerHTML = user.id
+
+						}
+					});	
+					var uid = response.authResponse.userID;
+					var accessToken = response.authResponse.accessToken;
+					 console.log(accessToken);
+					 
+				} else if (response.status === 'not_authorized') {
+					// the user is logged in to Facebook, 
+					// but has not authenticated your app
+				} else {
+					// the user isn't logged in to Facebook.
+				}
+			});
+			
+			//로그인 되는 순간 호출
+			FB.Event.subscribe('auth.login', function(response) {
+				alert("로그인 되는 순간 호출");
+				document.location.reload();
+			});
+			//로그아웃 되는 순간 호출
+			FB.Event.subscribe('auth.logout', function(response) {
+				alert("로그아웃 되는 순간 호출");
+				document.location.reload();
+			});
+ 			
+			/*
+			FB.login(function(response) {
+				if (response.authResponse) {
+					console.log('Welcome!  Fetching your information.... ');
+					FB.api('/me', function(response) {
+						console.log('Good to see you, ' + response.name + '.');
+					});
+				} else {
+					console.log('User cancelled login or did not fully authorize.');
+				}
+			});
+			*/	  
+        };
+		
+		//Feed백에 글남기는 method
+		function postToFeed (){
+			// calling the API ...
+			var obj = {
+				method: 'feed',
+				link: 'http://hijigoo.cafe24.com/BLOG/FB_finish.html',
+				picture: 'http://fbrell.com/f8.jpg',
+				name: 'name',
+				caption: 'caption',
+				description: 'description'
+			};
+			
+			function callback(response) {
+				alert("callback Fn");;
+			}
+			
+			FB.ui(obj, callback);
+		};
+		
+        // Load the SDK Asynchronously
+        (function(d){
+           var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement('script'); js.id = id; js.async = true;
+           js.src = "//connect.facebook.net/ko_KR/all.js";
+           ref.parentNode.insertBefore(js, ref);
+         }(document));
+		 //end Load the SDK Asynchronously
+		 
+      </script>
+
 </head>
 <body onload="myLocation()">
 	<input type="hidden" name="latitute" value="${place.gpsY}">
@@ -233,7 +338,17 @@
 			<td colspan="3" align="center">${perForInfo.contents1}</td>
 		</tr>
 		<tr id="map"></tr>
+		<tr>
+		<td>
+		<p>리뷰</p>
+    <fb:comments href="http://www.xpressengine.com/freeboard/${seq}" num_posts="4" width="470"></fb:comments><br>
+		</td>
+		</tr>
 	</table>
+	
+	
+	
+  
 	</body>
 </html>
 	
