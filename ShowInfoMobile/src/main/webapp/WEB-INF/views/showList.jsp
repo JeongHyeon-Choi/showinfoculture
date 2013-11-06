@@ -88,7 +88,7 @@
 	<td >
 		<form action="/show/search.do" method="post">
 
-		<input name="search" type="text" style="border: #870073 4px solid;  cursor:pointer; height:40px; width:350px;  font-size:20px; font-family:돋움, Dotum; font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
+		<input name="search" type="text" style="border: #870073 4px solid;  cursor:pointer; height:40px; width:350px;  font-size:20px; font-family:MD아롱체; font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
 
 	</td> 
 	
@@ -131,11 +131,11 @@
 				<img src="${perForList.thumbnail}" style="width:230px; height:300px" float="left"></a></td>
 			</tr>
 			<tr>
-				 <td align="center" width="230px" height="60px" font="고딕" font-size="8px">
+				 <td align="center" width="230px" height="60px" font="MD아롱체" font-size="8px">
 				 <a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">${perForList.title}</a></td>
 			</tr>
 			<tr>
-				 <td align="center" width="230px" height="60px" font="돋움" font-size="10px">${perForList.place}</td>
+				 <td align="center" width="230px" height="60px" font="MD아롱체" font-size="10px">${perForList.place}</td>
 			</tr>	 
 		</table>
 	</c:forEach>

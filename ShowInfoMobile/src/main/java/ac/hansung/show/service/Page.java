@@ -72,7 +72,7 @@ public class Page {
 				sb.append(path);
 				sb.append("?cPage=");
 				sb.append(i);
-				sb.append("' style='text-decoration:none' >");
+				sb.append("' style='text-decoration:none' alink='#000000' vlink='#FF007F' >");
 				sb.append(i);
 				sb.append("</a> ");
 				sb.append ("</font>");

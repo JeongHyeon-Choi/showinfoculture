@@ -246,9 +246,9 @@
 	
 <table align="center" width="900px" cellpadding="0" cellspacing="1">
 
-	<tr>
+	<tr >
 		<th colspan="3" align="center"><h2><font face="MD아롱체" >&#9829;&nbsp;&nbsp; ${perForInfo.title} &nbsp;&nbsp;&#9829;</font></h2>
-		<hr size="3" color = "black"><br><br></th>
+	<hr size="3" color = "black"><br><br></th>
 	</tr>
 	
 	<tr> 
@@ -356,7 +356,7 @@
 	<table  align="center" style="width:900px" cellpadding="0" cellspacing="1" >
 	<tr>
 		<td>
-		<p>리뷰</p>
+		<img src="resources/images/review.png" >
     <fb:comments href="http://www.xpressengine.com/freeboard/${seq}" num_posts="4" width="900px"></fb:comments><br>
 		</td>
 		</tr>
@@ -364,3 +364,4 @@
 	</body>
 </html>
 	
+		
