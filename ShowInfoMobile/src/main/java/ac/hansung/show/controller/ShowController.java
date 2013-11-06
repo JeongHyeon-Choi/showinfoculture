@@ -253,6 +253,13 @@ public class ShowController {
 			keyword = "&keyword=" + URLEncoder.encode(title, "utf-8");
 		}
 
+		//////////////////////////////////////////////////////////피드백 추가 
+		String url = "http://220.76.235.230:8080/show/read.do?seq="+seq+"&place="+mapPlace+"&title="+title;
+		
+		
+		url = URLEncoder.encode(url, "utf-8");
+		/////////////////////////////////////////////////////////////////
+		
 		// 맵 정보를 가져오기 위한 메소드
 		PlaceVO pf = showService.mapView(address);
 		// 공연 정보를 가져오기 위한 메소드
@@ -260,8 +267,10 @@ public class ShowController {
 
 		mav.addObject("perForInfo", pfi);
 		mav.addObject("place", pf);
+		mav.addObject("url",url);
 		mav.addObject("seq", seq);
-
+		
+		
 		if (device.isMobile()) {
 			logger.info("mobile");
 			mav.setViewName("m.showInfo");
