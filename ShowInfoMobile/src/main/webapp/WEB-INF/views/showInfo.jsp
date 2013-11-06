@@ -244,68 +244,73 @@
 	<input type="hidden" name="longitute" value="${place.gpsX}">
 	<input type="hidden" name="id" value="${place.culName}">
 	
-<table align="center" style="width:900px" cellpadding="0" cellspacing="1">
+<table align="center" width="900px" cellpadding="0" cellspacing="1">
 
 	<tr>
-		<th colspan="3" align="center"><h2><font face="휴먼매직체" >&#9829;&nbsp;&nbsp; ${perForInfo.title} &nbsp;&nbsp;&#9829;</font></h2>
+		<th colspan="3" align="center"><h2><font face="MD아롱체" >&#9829;&nbsp;&nbsp; ${perForInfo.title} &nbsp;&nbsp;&#9829;</font></h2>
 		<hr size="3" color = "black"><br><br></th>
 	</tr>
 	
 	<tr> 
-		<td width="300" rowspan="9"><img src="${perForInfo.imgUrl}" style="width:300px; height:450px"></td>
+		<td width="300" rowspan=10"><img src="${perForInfo.imgUrl}" style="width:300px; height:450px"></td>
 	</tr>
 	
 	<tr>
 		<td width="150"><img src="resources/images/date.png" ></td> 
-		<td width="300"><h3><font face="휴먼매직체" >${perForInfo.startDate} ~ ${perForInfo.endDate}</font></h3></td>
+		<td width="300"><h3><font face="MD아롱체" >${perForInfo.startDate} ~ ${perForInfo.endDate}</font></h3></td>
 	</tr>
 	<tr>
 		<td><img src="resources/images/loca.png" ></td>  
-		<td><h3> <font face="휴먼매직체" > ${perForInfo.place}</font></h3></td>
+		<td><h3> <font face="MD아롱체" > ${perForInfo.place}</font></h3></td>
 	</tr>
 	<tr>
 		<td><img src="resources/images/genre.png" ></td> 
-		 <td><h3><font face="휴먼매직체" >  ${perForInfo.realmName}</font></h3></td>
+		 <td><h3><font face="MD아롱체" >  ${perForInfo.realmName}</font></h3></td>
 	</tr>
 	<tr>
 		<td><img src="resources/images/price.png" ></td> 
-		 <td><h3><font face="휴먼매직체" >  ${perForInfo.price}</font> </h3> </td>
+		 <td><h3><font face="MD아롱체" >  ${perForInfo.price}</font> </h3> </td>
 	</tr>
 	<tr>
 		<td><img src="resources/images/call.png" ></td>  
-		<td><h3> <font face="휴먼매직체" >${perForInfo.phone}</font></h3></td>
+		<td><h3> <font face="MD아롱체" >${perForInfo.phone}</font></h3></td>
 	</tr>
 	
 	
-		<tr>
+	<tr>
 			<td><img src="resources/images/dis.png"> </td>  
+			
 			<c:if test="${perForInfo.discountRate != ''}">
-				<td><h3> <font face="휴먼매직체" >Discount</font></h3></td>
+				<td><h3> <font face="MD아롱체" >Discount</font></h3></td>
 			</c:if>
 			
 			<c:if test="${perForInfo.discountRate == ''}">
-				<td><h3> <font face="휴먼매직체" >Not</font></h3></td>
+				<td><h3> <font face="MD아롱체" >Not</font></h3></td>
 			</c:if>
-		</tr>
+	</tr>
 
 	<c:if test="${perForInfo.discountRate != ''}">
 		<tr>
 			<td><img src="resources/images/disrate.png"> </td>  
-			<td><h3> <font face="휴먼매직체" >${perForInfo.discountRate}%</font></h3></td>
+			<td><h3> <font face="MD아롱체" >${perForInfo.discountRate}%</font></h3></td>
 		</tr>
 		
 		<tr>
 			<td><img src="resources/images/print.png"> </td>  
-			<td><h4> <font face="휴먼매직체" ><a href="${perForInfo.ticketImg}">할인쿠폰다운</a></font></h4></td>
+			<td><h4> <font face="MD아롱체" ><a href="${perForInfo.ticketImg}">할인쿠폰다운</a></font></h4></td>
 		</tr>
 			
 		<tr>
 			<td colspan="3" align ="center"><br><br><hr size="3" color = "black"></td>
 		</tr>
+		
 	</c:if>
 	</table>
-	<table align="center">
-		<tr>
+	
+	<table width="900px" align="center" cellspacing="15" cellpadding="0">
+		<tr> 
+			<td width="350" > </td>
+			
 			<td width="30"><a
 				href="http://www.facebook.com/sharer.php?u='${url}' }"
 				target="_blank"> <img src="resources/images/facebook.png"
@@ -324,19 +329,28 @@
 				href="http://me2day.net/posts/new?new_post%5bbody%5d='${perForInfo.title} ${url }'"
 				target="_blank"> <img src="resources/images/me2day.png"
 					style="width: 30px; height: 30px"></a></td>
+			<td width="120"> </td>
+			<td height="20"> <a href="list.do"><img src="resources/images/main.png"></a></td>
 		</tr>
 	</table>
 
-	<table width="1000" align="center" cellspacing="30">
+	<table  align="center" style="width:900px" cellpadding="0" cellspacing="1" >
+		<th  colspan="3" > <hr size="3" color = "black">
+		</th>  
+		
 		<tr>
 			<td><img src="resources/images/about.png" onclick="about()" style="cursor:pointer;"></td>
 			<td><img src="resources/images/how.png" onclick="how()" style="cursor:pointer;"></td>
 			<td><a href="${perForInfo.bookUrl}" target=_blank><img
 					src="resources/images/buy.png"></a></td>
 		</tr>
+		
+		
 		<tr id="about">
 			<td colspan="3" align="center">${perForInfo.contents1}</td>
 		</tr>
+		
+		
 		<tr id="map"></tr>
 		<tr>
 		<td>

@@ -48,10 +48,10 @@ public class Page {
 		
 		sb = new StringBuffer();
 		if(startPage < pageBlock) {
-			sb.append("<img src = 'resources/images/pre.png' width = '20' height = '20'>");
+			sb.append("<img src = 'resources/images/pre.png' width = '30' height = '30'>");
 		}
 		else {
-			sb.append("<img src = 'resources/images/pre.png' width = '20' height = '20'");
+			sb.append("<img src = 'resources/images/pre.png' width = '30' height = '30'");
 			sb.append(" onclick = 'location.href = \"");
 			sb.append(path);
 			sb.append("?cPage=");
@@ -62,24 +62,26 @@ public class Page {
 		sb.append("&nbsp;|");
 		for(int i=startPage; i<=endPage; i++) {
 			if(i==cPage) {
-				sb.append("&nbsp; <b> <font clolr = '#91B7EF'>");
+				sb.append("&nbsp; <b> <font size='5' color = '#91B7EF' >");
 				sb.append(i);
 				sb.append("</font></b>");
 			}
 			else {
-				sb.append("&nbsp;<a href = '");
+				sb.append("<font size='5'>");
+				sb.append("&nbsp; <a href = '");
 				sb.append(path);
 				sb.append("?cPage=");
 				sb.append(i);
-				sb.append("'>");
+				sb.append("' style='text-decoration:none' >");
 				sb.append(i);
-				sb.append("</a>");
+				sb.append("</a> ");
+				sb.append ("</font>");
 			}
 		}
-		
-		sb.append("| &nbsp;");
+
+		sb.append("&nbsp | &nbsp;");
 		if(endPage < totalPage) {
-			sb.append("<img src = 'resources/images/next.png' width = '20' height = '20'");
+			sb.append("<img src = 'resources/images/next.png' width = '30' height = '30'");
 			sb.append(" onclick = 'location.href = \"");
 			sb.append(path);
 			sb.append("?cPage=");
@@ -87,7 +89,7 @@ public class Page {
 			sb.append("\"' style='cursor:pointer'> ");
 		}
 		else {
-			sb.append("<img src = 'resources/images/next.png' width = '20' height = '20'>");
+			sb.append("<img src = 'resources/images/next.png' width = '30' height = '30'>");
 
 		}
 	}
