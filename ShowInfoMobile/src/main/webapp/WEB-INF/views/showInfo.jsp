@@ -352,17 +352,15 @@
 		
 		
 		<tr id="map"></tr>
-		<tr>
+	</table> 
+	<table  align="center" style="width:900px" cellpadding="0" cellspacing="1" >
+	<tr>
 		<td>
 		<p>리뷰</p>
-    <fb:comments href="http://www.xpressengine.com/freeboard/${seq}" num_posts="4" width="470"></fb:comments><br>
+    <fb:comments href="http://www.xpressengine.com/freeboard/${seq}" num_posts="4" width="900px"></fb:comments><br>
 		</td>
 		</tr>
-	</table>
-	
-	
-	
-  
+		</table>
 	</body>
 </html>
 	
