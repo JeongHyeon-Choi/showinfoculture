@@ -299,11 +299,6 @@
 			<td><img src="resources/images/print.png"> </td>  
 			<td><h4> <font face="MD아롱체" ><a href="${perForInfo.ticketImg}">할인쿠폰다운</a></font></h4></td>
 		</tr>
-			
-		<tr>
-			<td colspan="3" align ="center"><br><br><hr size="3" color = "black"></td>
-		</tr>
-		
 	</c:if>
 	</table>
 	

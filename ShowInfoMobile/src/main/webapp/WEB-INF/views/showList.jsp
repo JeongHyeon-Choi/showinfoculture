@@ -111,7 +111,7 @@
 		 <li><a href="/show/catShow.do?catVal=C000"><span>무용</span></a></li>
 		 <li><a href="/show/discountList.do"><span>Special Offers</span></a></li>
 		 <li><a href='#'><span>Best Shows</span></a></li>
-		 <li><a href='#'><span>Best Reviews</span></a></li>
+		 <li><a href='#'>Best Reviews</a>
 	</ul>
 	</td>
 	</tr>

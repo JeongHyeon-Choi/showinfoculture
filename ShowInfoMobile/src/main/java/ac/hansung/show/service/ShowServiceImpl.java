@@ -25,6 +25,8 @@ public class ShowServiceImpl implements ShowService {
 		String url = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays/period?"
 				+ "ServiceKey=" + Utilty.getApiKey() + "&rows=" + rows + "&cPage=" + cPage;
 		
+		System.out.println(Utilty.getApiKey());
+		
 //		XPath 클래스로 받아온 xml 파싱 및 element의 값 얻어옴
 		Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(url);
 		XPath xpath = XPathFactory.newInstance().newXPath();
@@ -155,7 +157,7 @@ public class ShowServiceImpl implements ShowService {
 	public PlaceVO mapView(String address) throws Exception {
 //		공연 장소에 대한 정보가 보여질 xml의 Url
 		String mapUrl = "http://www.culture.go.kr/openapi/rest/cultureartspaces/performingplace?"
-				+ "ServiceKey=" + Utilty.getApiKey();
+				+ "ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D";
 		
 //		공연에 따른 공연 장소를 xml의 Url에 추가
 		mapUrl = mapUrl + address;
