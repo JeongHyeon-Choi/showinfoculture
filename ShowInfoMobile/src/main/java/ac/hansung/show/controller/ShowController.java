@@ -260,6 +260,7 @@ public class ShowController {
 
 		mav.addObject("perForInfo", pfi);
 		mav.addObject("place", pf);
+		mav.addObject("seq", seq);
 
 		if (device.isMobile()) {
 			logger.info("mobile");
