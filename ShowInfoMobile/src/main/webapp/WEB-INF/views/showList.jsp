@@ -8,69 +8,51 @@
 <style type="text/css">
 	#header{position:relative; width:auto;}
 		h1{width: auto; font:bold 30px "Castellar"; Color:#5D5D5D; text-align:center;}
-	#container,
-	#container ul,
-	#container li #container a {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		border: 0;
-		font-size: 18px;
-		font-family: Helvetica;
-		line-height: 1;
-	}
-	#container {
-		width: auto; height: 100px;
-	}
-	#container ul {
-		zoom: 1;
-		background: #9354ED top left repeat;
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		border-radius: 4px;
-		border: 1px solid #9354ED;
-		-moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
-		-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
-		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
-	}
-	#container ul:before {
-		content: '';
-		display: block;
-	}
-	#container ul:after {
-		content: '';
-		display: table;
-		clear: both;
-	}
-	#container a,
-	#container a:link,
-	#container a:visited {
-		padding: 20px 20px;
-		display: block;
-		text-decoration: none;
-		font:15px "MD아롱체";
-		color: #ffffff;
-		text-shadow: 0 -1px 1px #586835;
-		border-right: 1px solid #839b4e;
-	}
-	#container a:hover {
-		color: #ffffff;
-		text-shadow: 0 1px 1px #bdcd9c;
-	}
-	#container li {
-		float: left;
-		border-right: 1px solid #b2c58b;
-	}
-	#container li:hover {
-		background: #F361DC top left repeat;
-	}
-	#container li:first-child {
-		border-left: none;
-		-webkit-border-radius: 4px 0 0 4px;
-		-moz-border-radius: 4px 0 0 4px;
-		border-radius: 4px 0 0 4px;
-	}
-	#menu {leftmargin:200;}
+#cssmenu ul {
+  list-style-type: none;
+  width: 943px;
+  position: relative;
+  display: block;
+  height: 33px;
+  font-size: 18px;
+  background: url(resources/images/bg.png) repeat-x top left;
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  border: 1px solid #000;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu li a {
+  float: left;
+  color: #A79787;
+  text-decoration: none;
+  height: 24px;
+  padding: 9px 15px 0;
+  font-weight: normal;
+}
+#cssmenu li a:hover,
+#cssmenu .active {
+  color: #fff;
+  background: url(resources/images/bg.png) repeat-x top left;
+  text-decoration: none;
+}
+#cssmenu .active a {
+  color: #fff;
+  font-weight: 700;
+}
+#cssmenu ul {
+  background-color: #DC4900;
+}
+#cssmenu li a:hover,
+#cssmenu li.active {
+  background-color: #F46D00;
+}
+
 </style>
 
 </head>
@@ -99,26 +81,25 @@
 
 		</tr>
 	</table>
-	<div id='container'>
+	<div id='cssmenu'>
 	<table width="1000px" align="center">
 	<tr>
 	<td>
-	<ul>
-		 <li><a href="/show/catShow.do?catVal=B000"><span>콘서트/전통</span></a></li>
-		 <li><a href="/show/catShow.do?catVal=A000"><span>연극/뮤지컬</span></a></li>
-		 <li><a href="/show/catShow.do?catVal=L000"><span>전시/기타</span></a></li>
-		 <li><a href="/show/catShow.do?catVal=D000"><span>미술</span></a></li>
-		 <li><a href="/show/catShow.do?catVal=C000"><span>무용</span></a></li>
-		 <li><a href="/show/discountList.do"><span>Special Offers</span></a></li>
-		 <li><a href='#'><span>Best Shows</span></a></li>
-		 <li><a href='#'><span>Best Reviews</span></a></li>
-	</ul>
+<ul>
+   <li style="width:18%; text-align: center;" class='active'><a href='/show/list.do'><span>All Category</span></a></li>
+   <li style="width:10%; text-align: center;"><a href='/show/catShow.do?catVal=B000'><span>Music</span></a></li>
+   <li style="width:18%; text-align: center;"><a href='/show/catShow.do?catVal=A000'><span>Play/Musical</span></a></li>
+   <li style="width:16%; text-align: center;"><a href='/show/catShow.do?catVal=L000'><span>Exhibition</span></a></li>
+   <li style="width:9%; text-align: center;"><a href='/show/catShow.do?catVal=D000'><span>Art</span></a></li>
+   <li style="width:11%; text-align: center;"><a href='/show/catShow.do?catVal=C000'><span>Dance</span></a></li>
+   <li class='last' style="width:18%; text-align: center;"><a href='/show/discountList.do'><span>Special Offers</span></a></li>
+</ul>
 	</td>
 	</tr>
 	</table>
 	</div>
 	<div id="menu">
-	<table width="1000px" align="center">
+	<table width="1000px" align="center" style="margin-top: 20px">
 	<tr>
 	<td>
 	<c:forEach var="perForList" items="${perForList}">
