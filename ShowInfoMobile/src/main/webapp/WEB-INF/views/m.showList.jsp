@@ -42,7 +42,10 @@
 
 				});
 			});
-		</script>
+			
+			
+	</script>
+	
 	<form action="/show/search.do" method="post">
 		<div data-role="page" id="page1">
 			<div data-theme="a" data-role="header">
@@ -66,8 +69,7 @@
 				</div>
 
 				<div data-role="fieldcontain" align="center">
-					<input name="" id="searchinput1" placeholder="" value=""
-						type="search">
+					<input name="search" type="text" style="border: #870073 4px solid; font-size:20px; font-family:MD아롱체 font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
 				</div>
 			</div>
 			<div data-role="content">
