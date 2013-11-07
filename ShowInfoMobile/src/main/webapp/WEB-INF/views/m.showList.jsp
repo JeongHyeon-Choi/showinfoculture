@@ -76,19 +76,20 @@
 							공연 목록을 찾을 수 없습니다
 						</c:if>
 					<div
-						style="width: 250px; height: 370px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;"
+						style="position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;"
 						align="center">
+						<!-- 						style="width: 250px; height: 370px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;" -->
+						<!-- 						align="center"> -->
 						<a
 							href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">
-							<img src="${perForList.thumbnail}"
-							style="width: 230px; height: 300px" float="left">
-						</a>
-						</td> </a> <a
+							<img src="${perForList.thumbnail}" style="width: 90%; height: 8%"
+							float="left">
+						</a> <br> <a
 							href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">${perForList.title}</a>
 						<br>${perForList.place}
 					</div>
 				</c:forEach>
-				${pageCode}
+				<div align="center">${pageCode}</div>
 			</div>
 		</div>
 	</form>
