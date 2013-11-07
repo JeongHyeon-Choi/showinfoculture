@@ -80,7 +80,7 @@ public class ShowController {
 		} else {
 			logger.info("desktop");
 			mav.setViewName("showList");
-			mav.setViewName("m.showList");
+//			mav.setViewName("m.showList");
 		}
 
 		return mav;
