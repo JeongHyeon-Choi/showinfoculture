@@ -89,7 +89,7 @@
 	<td >
 		<form action="/show/search.do" method="post">
 
-		<input name="search" type="text" style="border: #870073 4px solid;  cursor:pointer; height:40px; width:350px;  font-size:20px; font-family:돋움, Dotum; font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
+		<input name="search" type="text" style="border: #870073 4px solid; height:40px; width:350px;  font-size:20px; font-family:돋움, Dotum; font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
 
 	</td> 
 	
