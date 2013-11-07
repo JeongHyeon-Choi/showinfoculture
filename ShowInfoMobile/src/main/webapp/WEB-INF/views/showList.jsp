@@ -3,56 +3,74 @@
 <%@ page session="false" %>
 <html>
 <head>
-<title>공연 목록</title>
+<title>Show List</title>
 
 <style type="text/css">
 	#header{position:relative; width:auto;}
 		h1{width: auto; font:bold 30px "Castellar"; Color:#5D5D5D; text-align:center;}
-#cssmenu ul {
-  list-style-type: none;
-  width: 943px;
-  position: relative;
-  display: block;
-  height: 33px;
-  font-size: 18px;
-  background: url(resources/images/bg.png) repeat-x top left;
-  font-family: Verdana, Helvetica, Arial, sans-serif;
-  border: 1px solid #000;
-  margin: 0;
-  padding: 0;
-}
-#cssmenu li {
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0;
-}
-#cssmenu li a {
-  float: left;
-  color: #A79787;
-  text-decoration: none;
-  height: 24px;
-  padding: 9px 15px 0;
-  font-weight: normal;
-}
-#cssmenu li a:hover,
-#cssmenu .active {
-  color: #fff;
-  background: url(resources/images/bg.png) repeat-x top left;
-  text-decoration: none;
-}
-#cssmenu .active a {
-  color: #fff;
-  font-weight: 700;
-}
-#cssmenu ul {
-  background-color: #DC4900;
-}
-#cssmenu li a:hover,
-#cssmenu li.active {
-  background-color: #F46D00;
-}
-
+	#container,
+	#container ul,
+	#container li #container a {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 18px;
+		font-family: Helvetica;
+		line-height: 1;
+	}
+	#container {
+		width: 1000px; height: 100px; margin-left: 100px
+	}
+	#container ul {
+		zoom: 1;
+		background: #9354ED top left repeat;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		border: 1px solid #9354ED;
+		-moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+		-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+	}
+	#container ul:before {
+		content: '';
+		display: block;
+	}
+	#container ul:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+	#container a,
+	#container a:link,
+	#container a:visited {
+		padding: 20px 20px;
+		display: block;
+		text-decoration: none;
+		font:16px "Bookman Old Style";
+		color: #ffffff;
+		text-shadow: 0 -1px 1px #586835;
+		border-right: 1px solid #839b4e;
+	}
+	#container a:hover {
+		color: #ffffff;
+		text-shadow: 0 1px 1px #bdcd9c;
+	}
+	#container li {
+		float: left;
+		border-right: 1px solid #b2c58b;
+	}
+	#container li:hover {
+		background: #F361DC top left repeat;
+	}
+	#container li:first-child {
+		border-left: none;
+		-webkit-border-radius: 4px 0 0 4px;
+		-moz-border-radius: 4px 0 0 4px;
+		border-radius: 4px 0 0 4px;
+	}
+	#menu {leftmargin:200;}
 </style>
 
 </head>
@@ -70,7 +88,7 @@
 	<td >
 		<form action="/show/search.do" method="post">
 
-		<input name="search" type="text" style="border: #870073 4px solid;  cursor:pointer; height:40px; width:350px;  font-size:20px; font-family:MD아롱체; font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
+		<input name="search" type="text" style="border: #870073 4px solid;  cursor:pointer; height:40px; width:350px;  font-size:20px; font-family:MD아롱체 font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
 
 	</td> 
 	
@@ -81,25 +99,25 @@
 
 		</tr>
 	</table>
-	<div id='cssmenu'>
-	<table width="1000px" align="center">
+	<div id='container'>
+	<table align="center" width="1000px">
 	<tr>
 	<td>
-<ul>
-   <li style="width:18%; text-align: center;" class='active'><a href='/show/list.do'><span>All Category</span></a></li>
-   <li style="width:10%; text-align: center;"><a href='/show/catShow.do?catVal=B000'><span>Music</span></a></li>
-   <li style="width:18%; text-align: center;"><a href='/show/catShow.do?catVal=A000'><span>Play/Musical</span></a></li>
-   <li style="width:16%; text-align: center;"><a href='/show/catShow.do?catVal=L000'><span>Exhibition</span></a></li>
-   <li style="width:9%; text-align: center;"><a href='/show/catShow.do?catVal=D000'><span>Art</span></a></li>
-   <li style="width:11%; text-align: center;"><a href='/show/catShow.do?catVal=C000'><span>Dance</span></a></li>
-   <li class='last' style="width:18%; text-align: center;"><a href='/show/discountList.do'><span>Special Offers</span></a></li>
-</ul>
+	<ul>
+		 <li style="width:16%; text-align:center;"><a href='/show/list.do'><span>All Category</span></a></li>
+		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=B000"><span>Music</span></a></li>
+		 <li style="width:15%; text-align:center;"><a href="/show/catShow.do?catVal=A000"><span>Play/Musical</span></a></li>
+		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=L000"><span>Exhibition</span></a></li>
+		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=D000"><span>Art</span></a></li>
+		<li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=C000"><span>Dance</span></a></li>
+		 <li style="width:16%; text-align:center;"><a href="/show/discountList.do"><span>Special Offers</span></a></li>
+	</ul>
 	</td>
 	</tr>
 	</table>
 	</div>
 	<div id="menu">
-	<table width="1000px" align="center" style="margin-top: 20px">
+	<table width="1000px" align="center">
 	<tr>
 	<td>
 	<c:forEach var="perForList" items="${perForList}">
@@ -112,11 +130,11 @@
 				<img src="${perForList.thumbnail}" style="width:230px; height:300px" float="left"></a></td>
 			</tr>
 			<tr>
-				 <td align="center" width="230px" height="60px" font="MD아롱체" font-size="8px">
+				 <td align="center" width="230px" height="60px" font="MD아롱체 font-size="8px">
 				 <a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">${perForList.title}</a></td>
 			</tr>
 			<tr>
-				 <td align="center" width="230px" height="60px" font="MD아롱체" font-size="10px">${perForList.place}</td>
+				 <td align="center" width="230px" height="60px" font="MD아롱체 font-size="10px">${perForList.place}</td>
 			</tr>	 
 		</table>
 	</c:forEach>
