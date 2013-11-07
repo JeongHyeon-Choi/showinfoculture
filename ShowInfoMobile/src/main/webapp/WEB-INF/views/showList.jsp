@@ -20,9 +20,10 @@
 		line-height: 1;
 	}
 	#container {
-		width: auto; height: 100px;
+		height: 100px;
 	}
 	#container ul {
+		width: 943px; 
 		zoom: 1;
 		background: #9354ED top left repeat;
 		-webkit-border-radius: 4px;
@@ -48,7 +49,7 @@
 		padding: 20px 20px;
 		display: block;
 		text-decoration: none;
-		font:15px "MD아롱체";
+		font: 16px "Bookman Old Style";
 		color: #ffffff;
 		text-shadow: 0 -1px 1px #586835;
 		border-right: 1px solid #839b4e;
@@ -88,7 +89,7 @@
 	<td >
 		<form action="/show/search.do" method="post">
 
-		<input name="search" type="text" style="border: #870073 4px solid;  cursor:pointer; height:40px; width:350px;  font-size:20px; font-family:돋움, Dotum; font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
+		<input name="search" type="text" style="border: #870073 4px solid;  cursor:pointer; height:40px; width:350px;  font-size:20px; font-family:MD아롱체 font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
 
 	</td> 
 	
@@ -104,14 +105,13 @@
 	<tr>
 	<td>
 	<ul>
-		 <li><a href="/show/catShow.do?catVal=B000"><span>콘서트/전통</span></a></li>
-		 <li><a href="/show/catShow.do?catVal=A000"><span>연극/뮤지컬</span></a></li>
-		 <li><a href="/show/catShow.do?catVal=L000"><span>전시/기타</span></a></li>
-		 <li><a href="/show/catShow.do?catVal=D000"><span>미술</span></a></li>
-		 <li><a href="/show/catShow.do?catVal=C000"><span>무용</span></a></li>
-		 <li><a href="/show/discountList.do"><span>Special Offers</span></a></li>
-		 <li><a href='#'><span>Best Shows</span></a></li>
-		 <li><a href='#'>Best Reviews</a>
+		 <li style="width:16%; text-align:center;"><a href='/show/list.do'><span>All Category</span></a></li>
+		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=B000"><span>Music</span></a></li>
+		 <li style="width:15%; text-align:center;"><a href="/show/catShow.do?catVal=A000"><span>Play/Musical</span></a></li>
+		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=L000"><span>Exhibition</span></a></li>
+		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=D000"><span>Art</span></a></li>
+		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=C000"><span>Dance</span></a></li>
+		 <li style="width:16%; text-align:center;"><a href="/show/discountList.do"><span>Special Offers</span></a></li>
 	</ul>
 	</td>
 	</tr>
@@ -131,11 +131,11 @@
 				<img src="${perForList.thumbnail}" style="width:230px; height:300px" float="left"></a></td>
 			</tr>
 			<tr>
-				 <td align="center" width="230px" height="60px" font="고딕" font-size="8px">
+				 <td align="center" width="230px" height="60px" font="MD아롱체 font-size="8px">
 				 <a href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">${perForList.title}</a></td>
 			</tr>
 			<tr>
-				 <td align="center" width="230px" height="60px" font="돋움" font-size="10px">${perForList.place}</td>
+				 <td align="center" width="230px" height="60px" font="MD아롱체 font-size="10px">${perForList.place}</td>
 			</tr>	 
 		</table>
 	</c:forEach>
