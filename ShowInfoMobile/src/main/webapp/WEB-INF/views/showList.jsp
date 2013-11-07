@@ -20,9 +20,10 @@
 		line-height: 1;
 	}
 	#container {
-		width: 1000px; height: 100px; margin-left: 100px
+		height: 100px;
 	}
 	#container ul {
+		width: 943px; 
 		zoom: 1;
 		background: #9354ED top left repeat;
 		-webkit-border-radius: 4px;
