@@ -49,7 +49,7 @@
 		padding: 20px 20px;
 		display: block;
 		text-decoration: none;
-		font: 16px "Bookman Old Style"
+		font: 16px "Bookman Old Style";
 		color: #ffffff;
 		text-shadow: 0 -1px 1px #586835;
 		border-right: 1px solid #839b4e;
