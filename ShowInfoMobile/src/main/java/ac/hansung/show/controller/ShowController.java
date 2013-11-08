@@ -34,7 +34,8 @@ public class ShowController {
 	@RequestMapping("/")
 	public ModelAndView home(Device device, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
-
+		String pc = "basic";
+		request.setAttribute("pc", pc);
 		
 		// 인자로 받는 방법 대신 아래 코드를 추가하여 받을 수도 있다
 		// device = DeviceUtils.getCurrentDevice(request);		
@@ -73,14 +74,13 @@ public class ShowController {
 		mav.addObject("perForList", perForList);
 		mav.addObject("pageCode", pageCode);
 		mav.addObject("cPage", cPage);
-
-		String pc = req.getParameter("pc");
-		req.getSession().setAttribute("pc", pc);
 		
+		String pc="basic";
+		if(req.getParameter("pc")!=null)
+			pc = req.getParameter("pc");
 		if (device.isMobile()) {
-			logger.info("list.do	mobile");
-			logger.info("pc		"+pc);
-			if(req.getSession().getAttribute("pc")=="pc"){
+			logger.info("list  mobile");
+			if(pc.equals("pc")){
 				logger.info("isPCVersion");
 				mav.setViewName("showList");
 				return mav;
@@ -89,11 +89,9 @@ public class ShowController {
 				mav.setViewName("m.showList");
 			}
 		} else {
-			logger.info("list.do	desktop");
+			logger.info("list  desktop");
 			mav.setViewName("showList");
-		//	mav.setViewName("m.showList");
 		}
-		System.out.println("view name:"+mav.getViewName());
 		return mav;
 	}
 
@@ -139,9 +137,14 @@ public class ShowController {
 		mav.addObject("pageCode", pageCode);
 		mav.addObject("cPage", cPage);
 
+		
+
+		String pc="basic";
+		if(req.getParameter("pc")!=null)
+			pc = req.getParameter("pc");
 		if (device.isMobile()) {
-			logger.info("mobile");
-			if(req.getSession().getAttribute("pc")=="pc"){
+			logger.info("catShow  mobile");
+			if(pc.equals("pc")){
 				mav.setViewName("showList");
 			}
 			else{
@@ -149,7 +152,7 @@ public class ShowController {
 				mav.setViewName("m.showList");
 			}
 		} else {
-			logger.info("desktop");
+			logger.info("catShow  desktop");
 			mav.setViewName("showList");
 		//	mav.setViewName("m.showList");
 		}
@@ -181,9 +184,13 @@ public class ShowController {
 		mav.addObject("pageCode", pageCode);
 		mav.addObject("cPage", cPage);
 
+
+		String pc="basic";
+		if(req.getParameter("pc")!=null)
+			pc = req.getParameter("pc");
 		if (device.isMobile()) {
-			logger.info("mobile");
-			if(req.getSession().getAttribute("pc")=="pc"){
+			logger.info("discountList  mobile");
+			if(pc.equals("pc")){
 				mav.setViewName("discountList");
 			}
 			else{
@@ -191,9 +198,8 @@ public class ShowController {
 				mav.setViewName("m.discountList");
 			}
 		} else {
-			logger.info("desktop");
+			logger.info("discountList  desktop");
 			mav.setViewName("discountList");
-		//	mav.setViewName("m.discountList");
 		}
 		return mav;
 	}
@@ -241,9 +247,12 @@ public class ShowController {
 		mav.addObject("cPage", cPage);
 
 
+		String pc="basic";
+		if(req.getParameter("pc")!=null)
+			pc = req.getParameter("pc");
 		if (device.isMobile()) {
-			logger.info("mobile");
-			if(req.getSession().getAttribute("pc")=="pc"){
+			logger.info("search  mobile");
+			if(pc.equals("pc")){
 				mav.setViewName("showList");
 			}
 			else{
@@ -251,7 +260,7 @@ public class ShowController {
 				mav.setViewName("m.showList");
 			}
 		} else {
-			logger.info("desktop");
+			logger.info("search  desktop");
 			mav.setViewName("showList");
 		//	mav.setViewName("m.discountList");
 		}
@@ -304,9 +313,13 @@ public class ShowController {
 		mav.addObject("url",url);
 		mav.addObject("seq", seq);
 		
+
+		String pc="basic";
+		if(req.getParameter("pc")!=null)
+			pc = req.getParameter("pc");
 		if (device.isMobile()) {
-			logger.info("mobile");
-			if(req.getSession().getAttribute("pc")=="pc"){
+			logger.info("read  mobile");
+			if(pc.equals("pc")){
 				mav.setViewName("showInfo");
 			}
 			else{
@@ -314,7 +327,7 @@ public class ShowController {
 				mav.setViewName("m.showInfo");
 			}
 		} else {
-			logger.info("desktop");
+			logger.info("read  desktop");
 			mav.setViewName("showInfo");
 		//	mav.setViewName("m.showInfo");
 		}
@@ -354,10 +367,13 @@ public class ShowController {
 
 		mav.addObject("perForInfo", pfi);
 		mav.addObject("place", pf);
-		
+
+		String pc="basic";
+		if(req.getParameter("pc")!=null)
+			pc = req.getParameter("pc");
 		if (device.isMobile()) {
-			logger.info("mobile");
-			if(req.getSession().getAttribute("pc")=="pc"){
+			logger.info("discountRead  mobile");
+			if(pc.equals("pc")){
 				mav.setViewName("showInfo");
 			}
 			else{
@@ -365,9 +381,8 @@ public class ShowController {
 				mav.setViewName("m.showInfo");
 			}
 		} else {
-			logger.info("desktop");
+			logger.info("discountRead  desktop");
 			mav.setViewName("showInfo");
-		//	mav.setViewName("m.showInfo");
 		}
 		
 		return mav;

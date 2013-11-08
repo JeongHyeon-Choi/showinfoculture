@@ -49,24 +49,31 @@
 			<div data-theme="a" data-role="header">
 				<h3>The Show</h3>
 				<div aldata-role="fieldcontain" align="center">
-					<select id="selectmenu" name="" data-mini="true" onchange="location.href=this.value">
+					<select id="selectmenu" name="" data-mini="true"
+						onchange="location.href=this.value">
 						<option value="1">All Category</option>
-						<option value="/show/catShow.do?catVal=B000">
+						<option
+							value="http://220.76.235.230:8080/show/catShow.do?catVal=B000">
 							Music</option>
-						<option value="/show/catShow.do?catVal=A000">
+						<option
+							value="http://220.76.235.230:8080/show/catShow.do?catVal=A000">
 							Play/Musical</option>
-						<option value="/show/catShow.do?catVal=L000">
+						<option
+							value="http://220.76.235.230:8080/show/catShow.do?catVal=L000">
 							Exhibition</option>
-						<option value="http://220.76.235.230:8080/show/catShow.do?catVal=D000">
+						<option
+							value="http://220.76.235.230:8080/show/catShow.do?catVal=D000">
 							Art</option>
-						<option value="http://220.76.235.230:8080/show/catShow.do?catVal=C000">
+						<option
+							value="http://220.76.235.230:8080/show/catShow.do?catVal=C000">
 							Dance</option>
 						<option value="http://220.76.235.230:8080/show/discountList.do">
 							Special Offers</option>
 					</select>
 				</div>
 				<div data-role="fieldcontain" align="center">
-					<input name="search" type="text" style="border: #870073 4px solid; font-size:20px; font-family:MD아롱체 font-weight:bold; padding:10 0 0 0; margin:0 0 0 0;" > 
+					<input name="search" type="text"
+						style="border: #870073 4px solid; font-size: 20px; font-family: MD아롱체 font-weight : bold; padding: 10 0 0 0; margin: 0 0 0 0;">
 				</div>
 			</div>
 			<div data-role="content">
@@ -81,13 +88,13 @@
 						<!-- 						align="center"> -->
 						<a
 							href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">
-							<c:if test="${perForList.thumbnail==null}">no image</c:if>
-							<c:if test="${perForList.thumbnail!=null}">
-								<img src="${perForList.thumbnail}" style="width: 90%; height: 60%"
-								float="left">
+							<c:if test="${perForList.thumbnail==null}">no image</c:if> <c:if
+								test="${perForList.thumbnail!=null}">
+								<img src="${perForList.thumbnail}"
+									style="width: 90%; height: 60%" float="left">
 							</c:if>
-							
-							
+
+
 						</a> <br> <a
 							href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">${perForList.title}</a>
 						<br>${perForList.place}
@@ -96,12 +103,11 @@
 				<div align="center">${pageCode}</div>
 			</div>
 			<div align="center">
-				<form action="/show/list.do?pc=pc" method="get" >
-					<input type="submit" value="PC버전으로 보기">
-				</form>
+				<a href="/show/list.do?pc=pc">PC버전으로 보기</a>
 			</div>
 		</div>
 	</form>
+
 </body>
 </html>
 
