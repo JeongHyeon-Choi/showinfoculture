@@ -74,17 +74,26 @@ public class ShowController {
 		mav.addObject("pageCode", pageCode);
 		mav.addObject("cPage", cPage);
 
+		
+		
 		if (device.isMobile()) {
 			logger.info("mobile");
-			mav.setViewName("m.showList");
+			if(req.getSession().getAttribute("pc")=="pc"){
+				mav.setViewName("showList");
+			}
+			else{
+				logger.info("isPCVersion");
+				mav.setViewName("m.showList");
+			}
 		} else {
 			logger.info("desktop");
 			mav.setViewName("showList");
-//			mav.setViewName("m.showList");
+		//	mav.setViewName("m.showList");
 		}
 
 		return mav;
 	}
+
 
 	// 카테고리별로 공연 목록을 보여주기 위한 메소드
 	@RequestMapping("/catShow.do")
@@ -129,12 +138,19 @@ public class ShowController {
 
 		if (device.isMobile()) {
 			logger.info("mobile");
-			mav.setViewName("m.showList");
+			if(req.getSession().getAttribute("pc")=="pc"){
+				mav.setViewName("showList");
+			}
+			else{
+				logger.info("isPCVersion");
+				mav.setViewName("m.showList");
+			}
 		} else {
 			logger.info("desktop");
 			mav.setViewName("showList");
+		//	mav.setViewName("m.showList");
 		}
-
+		
 		return mav;
 	}
 
@@ -164,12 +180,18 @@ public class ShowController {
 
 		if (device.isMobile()) {
 			logger.info("mobile");
-			mav.setViewName("m.discountList");
+			if(req.getSession().getAttribute("pc")=="pc"){
+				mav.setViewName("discountList");
+			}
+			else{
+				logger.info("isPCVersion");
+				mav.setViewName("m.discountList");
+			}
 		} else {
 			logger.info("desktop");
 			mav.setViewName("discountList");
+		//	mav.setViewName("m.discountList");
 		}
-
 		return mav;
 	}
 
@@ -215,14 +237,22 @@ public class ShowController {
 		mav.addObject("pageCode", pageCode);
 		mav.addObject("cPage", cPage);
 
+
 		if (device.isMobile()) {
 			logger.info("mobile");
-			mav.setViewName("m.showList");
+			if(req.getSession().getAttribute("pc")=="pc"){
+				mav.setViewName("showList");
+			}
+			else{
+				logger.info("isPCVersion");
+				mav.setViewName("m.showList");
+			}
 		} else {
 			logger.info("desktop");
 			mav.setViewName("showList");
+		//	mav.setViewName("m.discountList");
 		}
-
+		
 		return mav;
 	}
 
@@ -271,15 +301,21 @@ public class ShowController {
 		mav.addObject("url",url);
 		mav.addObject("seq", seq);
 		
-		
 		if (device.isMobile()) {
 			logger.info("mobile");
-			mav.setViewName("m.showInfo");
+			if(req.getSession().getAttribute("pc")=="pc"){
+				mav.setViewName("showInfo");
+			}
+			else{
+				logger.info("isPCVersion");
+				mav.setViewName("m.showInfo");
+			}
 		} else {
 			logger.info("desktop");
 			mav.setViewName("showInfo");
+		//	mav.setViewName("m.showInfo");
 		}
-
+		
 		return mav;
 	}
 
@@ -318,11 +354,19 @@ public class ShowController {
 		
 		if (device.isMobile()) {
 			logger.info("mobile");
-			mav.setViewName("m.showInfo");
+			if(req.getSession().getAttribute("pc")=="pc"){
+				mav.setViewName("showInfo");
+			}
+			else{
+				logger.info("isPCVersion");
+				mav.setViewName("m.showInfo");
+			}
 		} else {
 			logger.info("desktop");
 			mav.setViewName("showInfo");
+		//	mav.setViewName("m.showInfo");
 		}
+		
 		return mav;
 	}
 }
