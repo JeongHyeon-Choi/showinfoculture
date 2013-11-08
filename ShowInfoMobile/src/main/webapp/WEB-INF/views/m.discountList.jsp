@@ -32,17 +32,17 @@
 				<h3>The Show</h3>
 				<div aldata-role="fieldcontain" align="center">
 					<select id="selectmenu" name="" data-mini="true" onchange="location.href=this.value">
-						<option value="1">전체</option>
+						<option value="1">All Category</option>
 						<option value="http://220.76.235.230:8080/show/catShow.do?catVal=B000">
-							콘서트/전통</option>
+							Music</option>
 						<option value="http://220.76.235.230:8080/show/catShow.do?catVal=A000">
-							연극/뮤지컬</option>
+							Play/Musical</option>
 						<option value="http://220.76.235.230:8080/show/catShow.do?catVal=L000">
-							전시/기타</option>
+							Exhibition</option>
 						<option value="http://220.76.235.230:8080/show/catShow.do?catVal=D000">
-							미술</option>
+							Art</option>
 						<option value="http://220.76.235.230:8080/show/catShow.do?catVal=C000">
-							무용</option>
+							Dance</option>
 						<option value="http://220.76.235.230:8080/show/discountList.do">
 							Special Offers</option>
 					</select>
