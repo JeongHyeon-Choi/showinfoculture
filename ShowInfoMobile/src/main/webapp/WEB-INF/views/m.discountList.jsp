@@ -52,8 +52,8 @@
 				</div>
 			</div>
 			<div data-role="content">
-				<c:forEach var="perForList" items="${perForList}">
-					<c:if test="${perForList.count == 0}">
+				<c:forEach var="discountList" items="${discountList}">
+					<c:if test="${discountList.count == 0}">
 							공연 목록을 찾을 수 없습니다
 						</c:if>
 					<div
@@ -62,14 +62,7 @@
 						<!-- 						style="width: 250px; height: 370px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;" -->
 						<!-- 						align="center"> -->
 						<a
-							href="/show/discountRead.do?title=${discountList.title}&place=${discountList.place}">
-							<c:if test="${perForList.thumbnail==null}">no image</c:if>
-							<c:if test="${perForList.thumbnail!=null}">
-								<img src="${discountList.img}" style="width: 90%; height: 60%"
-								float="left">
-							</c:if>
-							
-							
+							href="/show/discountRead.do?title=${discountList.title}&place=${discountList.place}">	
 						</a> <br><a href="/show/discountRead.do?title=${discountList.title}&place=${discountList.place}">${discountList.title}</a>
 						<br>${discountList.place}
 					</div>
