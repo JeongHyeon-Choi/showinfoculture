@@ -5,6 +5,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+  
+  <!-- Extra Codiqa features -->
+  <link rel="stylesheet" href="codiqa.ext.css">
+  
+  <!-- jQuery and jQuery Mobile -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
+  <script src="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+  <!-- Extra Codiqa features -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/codiqa.ext.js"></script>
 <title>m - 공연 정보 - ${perForInfo.title}</title>
 <style type="text/css">
 	#map_canvas {
@@ -139,6 +154,31 @@
 	<input type="hidden" name="longitute" value="${place.gpsX}">
 	<input type="hidden" name="id" value="${place.culName}">
 	
+	
+	<div data-role="page" id="page1">
+    <div data-theme="a" data-role="header">
+        <h3>
+            The Show
+        </h3>
+    </div>
+    <div data-role="content">
+        <div data-role="fieldcontain">
+            <label for="textarea1">
+                ${perForInfo.title}
+            </label>
+            <textarea name="Title" id="textarea1" placeholder=""></textarea>
+        </div>
+        <div style="width: 288px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
+           <img src="${perForInfo.imgUrl}" style="width: 90%; height: 80%"float="left">
+        </div>
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=(${place.gpsX},${place.gpsY}), WI&amp;zoom=14&amp;size=288x200&amp;markers=(${place.gpsX},${place.gpsY}), WI&amp;sensor=false"
+        width="288" height="200">
+    </div>
+</div>
+
+
+
+	
 <table align="center" style="width:900px" cellpadding="0" cellspacing="1">
 
 	<tr>
@@ -199,29 +239,6 @@
 		</tr>
 	</c:if>
 	</table>
-	<table align="center">
-		<tr>
-			<td width="30"><a
-				href="http://www.facebook.com/sharer.php?u='${url}' }"
-				target="_blank"> <img src="resources/images/facebook.png"
-					style="width: 30px; height: 30px"></a></td>
-			<td width="30"><a
-				href="https://twitter.com/intent/tweet?source=webclient&text='${perForInfo.title} ${url }'"
-				target="_blank"> <img src="resources/images/twitter.png"
-					style="width: 30px; height: 30px"></a></td>
-
-			<td width="30"><a
-				href="https://www.google.com/bookmarks/mark?op=add&amp;bkmk='${url }'&amp;title='${perForInfo.title }'"
-				target="_blank"> <img src="resources/images/google.png"
-					style="width: 30px; height: 30px"></a></td>
-
-			<td width="30"><a
-				href="http://me2day.net/posts/new?new_post%5bbody%5d='${perForInfo.title} ${url }'"
-				target="_blank"> <img src="resources/images/me2day.png"
-					style="width: 30px; height: 30px"></a></td>
-		</tr>
-	</table>
-
 	<table width="1000" align="center" cellspacing="30">
 		<tr>
 			<td><img src="resources/images/about.png" onclick="about()" style="cursor:pointer;"></td>
@@ -236,4 +253,5 @@
 	</table>
 	</body>
 </html>
+
 	

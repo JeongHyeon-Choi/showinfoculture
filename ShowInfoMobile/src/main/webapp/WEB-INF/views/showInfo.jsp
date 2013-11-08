@@ -40,7 +40,7 @@
 		name = $("input[name=id]").eq(0).val();
 
 		my_latlng = new google.maps.LatLng(lat, lng);
-
+		alert(my_latlng);
 		var mapOptions = {
 			zoom : 18,
 			center : my_latlng,
