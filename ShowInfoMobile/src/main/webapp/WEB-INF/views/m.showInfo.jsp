@@ -129,8 +129,8 @@
             </label>
             <textarea name="Title" id="textarea1" placeholder=""></textarea>
         </div>
-        <div style="width: 288px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
-           <img src="${perForInfo.imgUrl}" style="width: 90%; height: 80%"float="left">
+        <div style="position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
+           <img src="${perForInfo.imgUrl}" style="width: 90%; height: 90%"float="left">
         </div>
         <div id="map">
 <%--         <img src="https://maps.googleapis.com/maps/api/staticmap?center=(${place.gpsY},${place.gpsX})&amp;zoom=18&amp;size=288x200&amp;markers=(${place.gpsY},${place.gpsX})&amp;sensor=false" --%>
