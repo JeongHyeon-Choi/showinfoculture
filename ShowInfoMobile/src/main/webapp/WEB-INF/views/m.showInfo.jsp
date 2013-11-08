@@ -171,7 +171,7 @@
         <div style="width: 288px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
            <img src="${perForInfo.imgUrl}" style="width: 90%; height: 80%"float="left">
         </div>
-        <img src="https://maps.googleapis.com/maps/api/staticmap?center=(${place.gpsX}, ${place.gpsY})&amp;zoom=14&amp;size=288x200&amp;markers=(${place.gpsX},${place.gpsY}), WI&amp;sensor=false"
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=(${place.gpsX},${place.gpsY})&amp;zoom=18&amp;size=288x200&amp;markers=(${place.gpsX},${place.gpsY})&amp;sensor=false"
         width="288" height="200">
     </div>
 </div>
