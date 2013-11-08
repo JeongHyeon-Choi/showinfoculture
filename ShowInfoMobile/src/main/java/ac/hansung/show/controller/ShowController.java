@@ -28,14 +28,12 @@ public class ShowController {
 	ShowService showService;
 
 	// 테스트용 로그. Device의 정보를 받아와서 디바이스의 종류를 판독한다.
-	private static final Logger logger = LoggerFactory
-			.getLogger(ShowController.class);
+	private static final Logger logger = LoggerFactory.getLogger(ShowController.class);
 
 	@RequestMapping("/")
 	public ModelAndView home(Device device, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 
-		
 		// 인자로 받는 방법 대신 아래 코드를 추가하여 받을 수도 있다
 		// device = DeviceUtils.getCurrentDevice(request);		
 		mav.setViewName("redirect:/list.do");
@@ -56,8 +54,7 @@ public class ShowController {
 		// 현재 페이지
 		String cPage = req.getParameter("cPage");
 		ModelAndView mav = new ModelAndView();
-		
-		
+			
 		if (cPage == null)
 			cPage = "1";
 
@@ -115,11 +112,9 @@ public class ShowController {
 		}
 
 		// 카테고리에 따른 공연 List를 가져오는 메소드
-		List<PerforListVO> perForList = showService.showCatList(rows, cPage,
-				realmCode);
+		List<PerforListVO> perForList = showService.showCatList(rows, cPage,realmCode);
 
-		page.setPageInit(Integer.parseInt(cPage),
-				showService.getCatCount(catVal), rows, pageBlock, path);
+		page.setPageInit(Integer.parseInt(cPage), showService.getCatCount(catVal), rows, pageBlock, path);
 		pageCode = page.getSb().toString();
 
 		mav.addObject("perForList", perForList);

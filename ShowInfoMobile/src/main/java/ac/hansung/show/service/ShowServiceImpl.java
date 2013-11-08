@@ -25,8 +25,6 @@ public class ShowServiceImpl implements ShowService {
 		String url = "http://www.culture.go.kr/openapi/rest/publicperformancedisplays/period?"
 				+ "ServiceKey=" + Utilty.getApiKey() + "&rows=" + rows + "&cPage=" + cPage;
 		
-		System.out.println(Utilty.getApiKey());
-		
 //		XPath 클래스로 받아온 xml 파싱 및 element의 값 얻어옴
 		Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(url);
 		XPath xpath = XPathFactory.newInstance().newXPath();
