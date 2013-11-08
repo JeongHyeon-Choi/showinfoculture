@@ -62,7 +62,9 @@
 						<!-- 						style="width: 250px; height: 370px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;" -->
 						<!-- 						align="center"> -->
 						<a
-							href="/show/discountRead.do?title=${discountList.title}&place=${discountList.place}">	
+							href="/show/discountRead.do?title=${discountList.title}&place=${discountList.place}">
+							<img src="${discountList.img}" style="width: 90%; height: 60%"
+								float="left">	
 						</a> <br><a href="/show/discountRead.do?title=${discountList.title}&place=${discountList.place}">${discountList.title}</a>
 						<br>${discountList.place}
 					</div>
