@@ -74,23 +74,26 @@ public class ShowController {
 		mav.addObject("pageCode", pageCode);
 		mav.addObject("cPage", cPage);
 
-		
+		String pc = req.getParameter("pc");
+		req.getSession().setAttribute("pc", pc);
 		
 		if (device.isMobile()) {
-			logger.info("mobile");
+			logger.info("list.do	mobile");
+			logger.info("pc		"+pc);
 			if(req.getSession().getAttribute("pc")=="pc"){
+				logger.info("isPCVersion");
 				mav.setViewName("showList");
+				return mav;
 			}
 			else{
-				logger.info("isPCVersion");
 				mav.setViewName("m.showList");
 			}
 		} else {
-			logger.info("desktop");
+			logger.info("list.do	desktop");
 			mav.setViewName("showList");
 		//	mav.setViewName("m.showList");
 		}
-
+		System.out.println("view name:"+mav.getViewName());
 		return mav;
 	}
 

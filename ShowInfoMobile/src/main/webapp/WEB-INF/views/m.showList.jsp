@@ -96,7 +96,7 @@
 				<div align="center">${pageCode}</div>
 			</div>
 			<div align="center">
-				<form action="/show/list.do?pc=1" method="get">
+				<form action="/show/list.do?pc=pc" method="get" >
 					<input type="submit" value="PC버전으로 보기">
 				</form>
 			</div>
