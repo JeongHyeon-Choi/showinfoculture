@@ -44,7 +44,7 @@
 	
 	//초기 실행 함수
 	function initialize() {
-		
+		$(addmap).appendTo("div[id=map]");
 		var lat;
 		var lng;
 		var my_latlng;
@@ -107,49 +107,10 @@
 			}
 		});
 	}
-	
-	function myLocation() {
-		/* 객체가 존재하면 */
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(successHandler,
-					errorHandler);
-		} else {
-			alert("not support geolocation");
-		}
-	}
-	
-	/* 위치정보를 가져오는 사용자정의 핸들러함수 */
-	function successHandler(position) {
-		initialize(position.coords);
-	}
-	
-	/* 실패한 경우 */
-	function errorHandler(error) {
-		var errorCode = error.code;
-		var errorMessage = error.message;
-	
-		var loc = document.getElementById("location");
-		loc.innerHTML = "실패 : " + errorCode + " / " + errorMessage;
-	}
-	
-	function how() {
-		$('tr[id=about]').hide();
-		$("tr[id=map]").children().remove();
-		$(addmap).appendTo("tr[id=map]");
-		initialize();
-	}
-
-	function about() {
-		$('tr[id=about]').show();
-		$("tr[id=map]").children().remove();
-	}
-	function start() {
-		about();
-	}
 </script>
 
 </head>
-<body onload="myLocation()">
+<body onload="initialize()">
 	<input type="hidden" name="latitute" value="${place.gpsY}">
 	<input type="hidden" name="longitute" value="${place.gpsX}">
 	<input type="hidden" name="id" value="${place.culName}">
@@ -171,86 +132,88 @@
         <div style="width: 288px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
            <img src="${perForInfo.imgUrl}" style="width: 90%; height: 80%"float="left">
         </div>
-        <img src="https://maps.googleapis.com/maps/api/staticmap?center=(${place.gpsY},${place.gpsX})&amp;zoom=18&amp;size=288x200&amp;markers=(${place.gpsY},${place.gpsX})&amp;sensor=false"
-        width="288" height="200">
+        <div id="map">
+<%--         <img src="https://maps.googleapis.com/maps/api/staticmap?center=(${place.gpsY},${place.gpsX})&amp;zoom=18&amp;size=288x200&amp;markers=(${place.gpsY},${place.gpsX})&amp;sensor=false" --%>
+<!--         width="288" height="200"> -->
+        </div>
     </div>
 </div>
 
 
 
 	
-<table align="center" style="width:900px" cellpadding="0" cellspacing="1">
+<!-- <table align="center" style="width:900px" cellpadding="0" cellspacing="1"> -->
 
-	<tr>
-		<th colspan="3" align="center"><h2><font face="휴먼매직체" >&#9829;&nbsp;&nbsp; ${perForInfo.title} &nbsp;&nbsp;&#9829;</font></h2>
-		<hr size="3" color = "black"><br><br></th>
-	</tr>
+<!-- 	<tr> -->
+<%-- 		<th colspan="3" align="center"><h2><font face="휴먼매직체" >&#9829;&nbsp;&nbsp; ${perForInfo.title} &nbsp;&nbsp;&#9829;</font></h2> --%>
+<!-- 		<hr size="3" color = "black"><br><br></th> -->
+<!-- 	</tr> -->
 	
-	<tr> 
-		<td width="300" rowspan="9"><img src="${perForInfo.imgUrl}" style="width:300px; height:450px"></td>
-	</tr>
+<!-- 	<tr>  -->
+<%-- 		<td width="300" rowspan="9"><img src="${perForInfo.imgUrl}" style="width:300px; height:450px"></td> --%>
+<!-- 	</tr> -->
 	
-	<tr>
-		<td width="150"><img src="resources/images/date.png" ></td> 
-		<td width="300"><h3><font face="휴먼매직체" >${perForInfo.startDate} ~ ${perForInfo.endDate}</font></h3></td>
-	</tr>
-	<tr>
-		<td><img src="resources/images/loca.png" ></td>  
-		<td><h3> <font face="휴먼매직체" > ${perForInfo.place}</font></h3></td>
-	</tr>
-	<tr>
-		<td><img src="resources/images/genre.png" ></td> 
-		 <td><h3><font face="휴먼매직체" >  ${perForInfo.realmName}</font></h3></td>
-	</tr>
-	<tr>
-		<td><img src="resources/images/price.png" ></td> 
-		 <td><h3><font face="휴먼매직체" >  ${perForInfo.price}</font> </h3> </td>
-	</tr>
-	<tr>
-		<td><img src="resources/images/call.png" ></td>  
-		<td><h3> <font face="휴먼매직체" >${perForInfo.phone}</font></h3></td>
-	</tr>
+<!-- 	<tr> -->
+<!-- 		<td width="150"><img src="resources/images/date.png" ></td>  -->
+<%-- 		<td width="300"><h3><font face="휴먼매직체" >${perForInfo.startDate} ~ ${perForInfo.endDate}</font></h3></td> --%>
+<!-- 	</tr> -->
+<!-- 	<tr> -->
+<!-- 		<td><img src="resources/images/loca.png" ></td>   -->
+<%-- 		<td><h3> <font face="휴먼매직체" > ${perForInfo.place}</font></h3></td> --%>
+<!-- 	</tr> -->
+<!-- 	<tr> -->
+<!-- 		<td><img src="resources/images/genre.png" ></td>  -->
+<%-- 		 <td><h3><font face="휴먼매직체" >  ${perForInfo.realmName}</font></h3></td> --%>
+<!-- 	</tr> -->
+<!-- 	<tr> -->
+<!-- 		<td><img src="resources/images/price.png" ></td>  -->
+<%-- 		 <td><h3><font face="휴먼매직체" >  ${perForInfo.price}</font> </h3> </td> --%>
+<!-- 	</tr> -->
+<!-- 	<tr> -->
+<!-- 		<td><img src="resources/images/call.png" ></td>   -->
+<%-- 		<td><h3> <font face="휴먼매직체" >${perForInfo.phone}</font></h3></td> --%>
+<!-- 	</tr> -->
 	
 	
-		<tr>
-			<td><img src="resources/images/dis.png"> </td>  
-			<c:if test="${perForInfo.discountRate != ''}">
-				<td><h3> <font face="휴먼매직체" >Discount</font></h3></td>
-			</c:if>
+<!-- 		<tr> -->
+<!-- 			<td><img src="resources/images/dis.png"> </td>   -->
+<%-- 			<c:if test="${perForInfo.discountRate != ''}"> --%>
+<!-- 				<td><h3> <font face="휴먼매직체" >Discount</font></h3></td> -->
+<%-- 			</c:if> --%>
 			
-			<c:if test="${perForInfo.discountRate == ''}">
-				<td><h3> <font face="휴먼매직체" >Not</font></h3></td>
-			</c:if>
-		</tr>
+<%-- 			<c:if test="${perForInfo.discountRate == ''}"> --%>
+<!-- 				<td><h3> <font face="휴먼매직체" >Not</font></h3></td> -->
+<%-- 			</c:if> --%>
+<!-- 		</tr> -->
 
-	<c:if test="${perForInfo.discountRate != ''}">
-		<tr>
-			<td><img src="resources/images/disrate.png"> </td>  
-			<td><h3> <font face="휴먼매직체" >${perForInfo.discountRate}%</font></h3></td>
-		</tr>
+<%-- 	<c:if test="${perForInfo.discountRate != ''}"> --%>
+<!-- 		<tr> -->
+<!-- 			<td><img src="resources/images/disrate.png"> </td>   -->
+<%-- 			<td><h3> <font face="휴먼매직체" >${perForInfo.discountRate}%</font></h3></td> --%>
+<!-- 		</tr> -->
 		
-		<tr>
-			<td><img src="resources/images/print.png"> </td>  
-			<td><h4> <font face="휴먼매직체" ><a href="${perForInfo.ticketImg}">할인쿠폰다운</a></font></h4></td>
-		</tr>
+<!-- 		<tr> -->
+<!-- 			<td><img src="resources/images/print.png"> </td>   -->
+<%-- 			<td><h4> <font face="휴먼매직체" ><a href="${perForInfo.ticketImg}">할인쿠폰다운</a></font></h4></td> --%>
+<!-- 		</tr> -->
 			
-		<tr>
-			<td colspan="3" align ="center"><br><br><hr size="3" color = "black"></td>
-		</tr>
-	</c:if>
-	</table>
-	<table width="1000" align="center" cellspacing="30">
-		<tr>
-			<td><img src="resources/images/about.png" onclick="about()" style="cursor:pointer;"></td>
-			<td><img src="resources/images/how.png" onclick="how()" style="cursor:pointer;"></td>
-			<td><a href="${perForInfo.bookUrl}" target=_blank><img
-					src="resources/images/buy.png"></a></td>
-		</tr>
-		<tr id="about">
-			<td colspan="3" align="center">${perForInfo.contents1}</td>
-		</tr>
-		<tr id="map"></tr>
-	</table>
+<!-- 		<tr> -->
+<!-- 			<td colspan="3" align ="center"><br><br><hr size="3" color = "black"></td> -->
+<!-- 		</tr> -->
+<%-- 	</c:if> --%>
+<!-- 	</table> -->
+<!-- 	<table width="1000" align="center" cellspacing="30"> -->
+<!-- 		<tr> -->
+<!-- 			<td><img src="resources/images/about.png" onclick="about()" style="cursor:pointer;"></td> -->
+<!-- 			<td><img src="resources/images/how.png" onclick="how()" style="cursor:pointer;"></td> -->
+<%-- 			<td><a href="${perForInfo.bookUrl}" target=_blank><img --%>
+<!-- 					src="resources/images/buy.png"></a></td> -->
+<!-- 		</tr> -->
+<!-- 		<tr id="about"> -->
+<%-- 			<td colspan="3" align="center">${perForInfo.contents1}</td> --%>
+<!-- 		</tr> -->
+<!-- 		<tr id="map"></tr> -->
+<!-- 	</table> -->
 	</body>
 </html>
 
