@@ -49,7 +49,7 @@
 		padding: 20px 20px;
 		display: block;
 		text-decoration: none;
-		font: 16px "Bookman Old Style";
+		font: 18px "나눔고딕";
 		color: #ffffff;
 		text-shadow: 0 -1px 1px #586835;
 		border-right: 1px solid #839b4e;
@@ -105,13 +105,13 @@
 	<tr>
 	<td>
 	<ul>
-		 <li style="width:16%; text-align:center;"><a href='/show/list.do'><span>All Category</span></a></li>
-		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=B000"><span>Music</span></a></li>
-		 <li style="width:15%; text-align:center;"><a href="/show/catShow.do?catVal=A000"><span>Play/Musical</span></a></li>
-		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=L000"><span>Exhibition</span></a></li>
-		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=D000"><span>Art</span></a></li>
-		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=C000"><span>Dance</span></a></li>
-		 <li style="width:16%; text-align:center;"><a href="/show/discountList.do"><span>Special Offers</span></a></li>
+		 <li style="width:16%; text-align:center;"><a href='/show/list.do'><span>전체보기</span></a></li>
+		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=B000"><span>음악</span></a></li>
+		 <li style="width:15%; text-align:center;"><a href="/show/catShow.do?catVal=A000"><span>연극/뮤지컬</span></a></li>
+		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=L000"><span>전시</span></a></li>
+		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=D000"><span>미술</span></a></li>
+		 <li style="width:13%; text-align:center;"><a href="/show/catShow.do?catVal=C000"><span>무용</span></a></li>
+		 <li style="width:16%; text-align:center;"><a href="/show/discountList.do"><span>할인공연</span></a></li>
 	</ul>
 	</td>
 	</tr>
