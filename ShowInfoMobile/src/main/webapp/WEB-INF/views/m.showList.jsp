@@ -50,24 +50,24 @@
 				<div aldata-role="fieldcontain" align="center">
 					<select id="selectmenu" name="" data-mini="true"
 						onchange="location.href=this.value">
-						<option value="1">All Category</option>
+						<option value="1">전체보기</option>
 						<option
 							value="http://220.76.235.230:8080/show/catShow.do?catVal=B000">
-							Music</option>
+							음악</option>
 						<option
 							value="http://220.76.235.230:8080/show/catShow.do?catVal=A000">
-							Play/Musical</option>
+							연극/뮤지컬</option>
 						<option
 							value="http://220.76.235.230:8080/show/catShow.do?catVal=L000">
-							Exhibition</option>
+							전시</option>
 						<option
 							value="http://220.76.235.230:8080/show/catShow.do?catVal=D000">
-							Art</option>
+							미술</option>
 						<option
 							value="http://220.76.235.230:8080/show/catShow.do?catVal=C000">
-							Dance</option>
+							무용</option>
 						<option value="http://220.76.235.230:8080/show/discountList.do">
-							Special Offers</option>
+							할인공연</option>
 					</select>
 				</div>
 				<div data-role="fieldcontain" align="center">
