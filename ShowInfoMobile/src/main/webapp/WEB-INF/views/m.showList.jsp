@@ -30,7 +30,6 @@
 <link rel="stylesheet"
 	href="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
 
-<!-- Extra Codiqa features -->
 <!-- <link rel="stylesheet" href="codiqa.ext.css"> -->
 
 <!-- jQuery and jQuery Mobile -->
@@ -84,8 +83,6 @@
 					<div
 						style="position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;"
 						align="center">
-						<!-- 						style="width: 250px; height: 370px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;" -->
-						<!-- 						align="center"> -->
 						<a
 							href="/show/read.do?seq=${perForList.seq}&place=${perForList.place}&title=${perForList.title}">
 							<c:if test="${perForList.thumbnail==null}">no image</c:if> <c:if

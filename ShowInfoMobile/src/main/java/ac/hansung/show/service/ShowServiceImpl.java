@@ -155,7 +155,7 @@ public class ShowServiceImpl implements ShowService {
 	public PlaceVO mapView(String address) throws Exception {
 //		공연 장소에 대한 정보가 보여질 xml의 Url
 		String mapUrl = "http://www.culture.go.kr/openapi/rest/cultureartspaces/performingplace?"
-				+ "ServiceKey=XcnMofgimavn4FhW9zGJndMQaq0V4LWWmRD8glJdQYNH%2F1qiatox2GY7VJXpVIcmLy35%2BIvEJiFshQbNe4CT0g%3D%3D";
+				+ "ServiceKey=" + Utilty.getApiKey();
 		
 //		공연에 따른 공연 장소를 xml의 Url에 추가
 		mapUrl = mapUrl + address;

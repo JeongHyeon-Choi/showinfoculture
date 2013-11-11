@@ -40,7 +40,7 @@
 		name = $("input[name=id]").eq(0).val();
 
 		my_latlng = new google.maps.LatLng(lat, lng);
-		alert(my_latlng);
+	
 		var mapOptions = {
 			zoom : 18,
 			center : my_latlng,
@@ -50,9 +50,6 @@
 		}
 		map = new google.maps.Map(document.getElementById('map_canvas'),
 				mapOptions);
-
-		//		alert(lat + ":" + lng + ":" + name);
-
 		addMarker(my_latlng, name);
 	}
 
@@ -93,31 +90,6 @@
 			}
 		});
 	}
-
-	function myLocation() {
-		/* 객체가 존재하면 */
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(successHandler,
-					errorHandler);
-		} else {
-			alert("not support geolocation");
-		}
-	}
-
-	/* 위치정보를 가져오는 사용자정의 핸들러함수 */
-	function successHandler(position) {
-		initialize(position.coords);
-	}
-
-	/* 실패한 경우 */
-	function errorHandler(error) {
-		var errorCode = error.code;
-		var errorMessage = error.message;
-
-		var loc = document.getElementById("location");
-		loc.innerHTML = "실패 : " + errorCode + " / " + errorMessage;
-	}
-
 	function how() {
 		$('tr[id=about]').hide();
 		$("tr[id=map]").children().remove();
@@ -137,96 +109,14 @@
  <div id="fb-root"></div>
       <script>
         window.fbAsyncInit = function() {
-			
 			//초기화
 			FB.init({
 				appId      : '542875349069066', // App ID
-				//channelUrl : '//127.0.0.1:8020/rotuebook_html5/WebContent/testCase//FB_channel.html', // Channel File
 				status     : true, // check login status
 				cookie     : true, // enable cookies to allow the server to access the session
 				xfbml      : true  // parse XFBML
 			});
-			
-			// Additional initialization code here
-			/*
-			FB.ui({ method: 'feed', 
-			  message: 'Facebook for Websites is super-cool'
-			 });
-			*/
-			
-			//페이지 로드 했을시 호출 
-			FB.getLoginStatus(function(response) {
-				if (response.status === 'connected') {
-					
-					FB.api('/me', function(user) {
-						if (user) {
-							console.log(user.name);
-			
-							var image = document.getElementById('image');
-							image.src = 'http://graph.facebook.com/' + user.id + '/picture';
-							var name = document.getElementById('name');
-							name.innerHTML = user.name
-							var id = document.getElementById('id');
-							id.innerHTML = user.id
-
-						}
-					});	
-					var uid = response.authResponse.userID;
-					var accessToken = response.authResponse.accessToken;
-					 console.log(accessToken);
-					 
-				} else if (response.status === 'not_authorized') {
-					// the user is logged in to Facebook, 
-					// but has not authenticated your app
-				} else {
-					// the user isn't logged in to Facebook.
-				}
-			});
-			
-			//로그인 되는 순간 호출
-			FB.Event.subscribe('auth.login', function(response) {
-				alert("로그인 되는 순간 호출");
-				document.location.reload();
-			});
-			//로그아웃 되는 순간 호출
-			FB.Event.subscribe('auth.logout', function(response) {
-				alert("로그아웃 되는 순간 호출");
-				document.location.reload();
-			});
- 			
-			/*
-			FB.login(function(response) {
-				if (response.authResponse) {
-					console.log('Welcome!  Fetching your information.... ');
-					FB.api('/me', function(response) {
-						console.log('Good to see you, ' + response.name + '.');
-					});
-				} else {
-					console.log('User cancelled login or did not fully authorize.');
-				}
-			});
-			*/	  
         };
-		
-		//Feed백에 글남기는 method
-		function postToFeed (){
-			// calling the API ...
-			var obj = {
-				method: 'feed',
-				link: 'http://hijigoo.cafe24.com/BLOG/FB_finish.html',
-				picture: 'http://fbrell.com/f8.jpg',
-				name: 'name',
-				caption: 'caption',
-				description: 'description'
-			};
-			
-			function callback(response) {
-				alert("callback Fn");;
-			}
-			
-			FB.ui(obj, callback);
-		};
-		
         // Load the SDK Asynchronously
         (function(d){
            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
@@ -240,7 +130,7 @@
       </script>
 
 </head>
-<body onload="myLocation()">
+<body onload="start()">
 	<meta property="og:image" content='${perForList.thumbnail}' />
 	<input type="hidden" name="latitute" value="${place.gpsY}">
 	<input type="hidden" name="longitute" value="${place.gpsX}">
