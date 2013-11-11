@@ -45,6 +45,9 @@ public class ShowServiceImpl implements ShowService {
 			pfl.setPlace(place.item(i).getTextContent());
 			pfl.setRealmName(realmName.item(i).getTextContent());
 			pfl.setThumbnail(thumbnail.item(i).getTextContent());
+			if(seq.item(i).getTextContent().equals("89530")){
+				pfl.setThumbnail("http://www.chongdong.com/upfiles/play/introduce/h2_info_01_01_title1.gif");
+			}
 			perForList.add(pfl);
 		}
 		
